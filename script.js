@@ -959,7 +959,7 @@ function closeAdvancedLesson() {
 
 
 // ==========================================
-// FECHAR MODAL AVANÇADO
+// FECHAR MODAL AVANÇADO - COMERCIAL
 // CLICANDO FORA
 // ==========================================
 
