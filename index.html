@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rede Fácil 🚀</title>
+
+    <meta
+      name="description"
+      content="Aprenda conceitos de redes de forma simples e divertida."
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- CABEÇALHO -->
+    <header class="header">
+      <div class="logo">🌐 <span>Rede Fácil</span></div>
+
+      <div class="progress-container">
+        <span>Seu progresso</span>
+
+        <div class="progress">
+          <div id="progressBar"></div>
+        </div>
+
+        <span id="progressText">0%</span>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <span class="badge">🎓 APRENDENDO REDES</span>
+
+          <h1>
+            Internet sem
+            <span>complicação.</span>
+          </h1>
+
+          <p>
+            Aprenda IP, NAT, CGNAT, login e outros conceitos de redes usando
+            exemplos do dia a dia.
+          </p>
+
+          <button class="primary-button" onclick="scrollToLessons()">
+            🚀 Começar a aprender
+          </button>
+        </div>
+
+        <div class="hero-card">
+          <div class="router-animation">📡</div>
+
+          <h3>Você sabia?</h3>
+
+          <p>
+            Quando você abre um site, várias coisas acontecem entre seu celular
+            e o servidor.
+          </p>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section class="section">
+        <div class="section-title">
+          <span class="badge">🌎 PRIMEIRO PASSO</span>
+
+          <h2>Como a Internet funciona?</h2>
+
+          <p>Pense na Internet como um sistema de entregas.</p>
+        </div>
+
+        <div class="internet-map">
+          <div class="map-item">
+            <div class="map-icon">📱</div>
+
+            <strong>Seu celular</strong>
+
+            <small> Faz o pedido </small>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="map-item">
+            <div class="map-icon">📡</div>
+
+            <strong>Roteador</strong>
+
+            <small> Organiza a conexão </small>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="map-item">
+            <div class="map-icon">🏢</div>
+
+            <strong>Provedor</strong>
+
+            <small> Leva você para a Internet </small>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="map-item">
+            <div class="map-icon">🌐</div>
+
+            <strong>Internet</strong>
+
+            <small> Encontra o servidor </small>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="map-item">
+            <div class="map-icon">🖥️</div>
+
+            <strong>Servidor</strong>
+
+            <small> Entrega a resposta </small>
+          </div>
+        </div>
+      </section>
+
+      <!-- AULAS -->
+      <section class="section lessons" id="lessons">
+        <div class="section-title">
+          <span class="badge">📚 AULAS</span>
+
+          <h2>Aprenda passo a passo</h2>
+
+          <p>Clique em cada assunto para descobrir como funciona.</p>
+        </div>
+
+        <div class="lesson-grid">
+          <!-- IP PRIVADO -->
+          <article class="lesson-card" data-lesson="1">
+            <div class="lesson-icon private">🏠</div>
+
+            <span class="lesson-number"> AULA 01 </span>
+
+            <h3>IP Privado</h3>
+
+            <p>O endereço dos aparelhos dentro da sua casa.</p>
+
+            <button onclick="openLesson(1)">Aprender →</button>
+          </article>
+
+          <!-- IP PUBLICO -->
+          <article class="lesson-card" data-lesson="2">
+            <div class="lesson-icon public">🌎</div>
+
+            <span class="lesson-number"> AULA 02 </span>
+
+            <h3>IP Público</h3>
+
+            <p>O endereço da sua conexão na Internet.</p>
+
+            <button onclick="openLesson(2)">Aprender →</button>
+          </article>
+
+          <!-- NAT -->
+          <article class="lesson-card" data-lesson="3">
+            <div class="lesson-icon nat">🔄</div>
+
+            <span class="lesson-number"> AULA 03 </span>
+
+            <h3>NAT</h3>
+
+            <p>O "tradutor" entre sua rede e a Internet.</p>
+
+            <button onclick="openLesson(3)">Aprender →</button>
+          </article>
+
+          <!-- LOGIN -->
+          <article class="lesson-card" data-lesson="4">
+            <div class="lesson-icon login">🔑</div>
+
+            <span class="lesson-number"> AULA 04 </span>
+
+            <h3>Login</h3>
+
+            <p>A identificação usada para entrar na rede.</p>
+
+            <button onclick="openLesson(4)">Aprender →</button>
+          </article>
+
+          <!-- CGNAT -->
+          <article class="lesson-card" data-lesson="5">
+            <div class="lesson-icon cgnat">👨‍👩‍👧‍👦</div>
+
+            <span class="lesson-number"> AULA 05 </span>
+
+            <h3>CGNAT</h3>
+
+            <p>Vários clientes compartilhando um IP público.</p>
+
+            <button onclick="openLesson(5)">Aprender →</button>
+          </article>
+
+          <!-- QUIZ -->
+          <article class="lesson-card quiz-card">
+            <div class="lesson-icon quiz">🧠</div>
+
+            <span class="lesson-number"> DESAFIO </span>
+
+            <h3>Teste seus conhecimentos</h3>
+
+            <p>Será que você já consegue explicar redes?</p>
+
+            <button onclick="startQuiz()">Fazer quiz →</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXEMPLO -->
+      <section class="section example-section">
+        <div class="example-box">
+          <div class="example-character">🏢</div>
+
+          <div>
+            <span class="badge"> 💡 EXEMPLO FÁCIL </span>
+
+            <h2>Imagine um prédio...</h2>
+
+            <p>
+              O prédio representa sua rede. Cada apartamento representa um
+              dispositivo. O endereço do prédio representa o IP público.
+            </p>
+
+            <div class="example-list">
+              <div>
+                🏠
+                <strong>IP Privado</strong>
+                = apartamento
+              </div>
+
+              <div>
+                🌎
+                <strong>IP Público</strong>
+                = endereço do prédio
+              </div>
+
+              <div>
+                🔄
+                <strong>NAT</strong>
+                = porteiro
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL -->
+      <section class="final-section">
+        <div class="final-icon">🎉</div>
+
+        <h2>Redes não precisam ser difíceis.</h2>
+
+        <p>Aprenda um conceito por vez e tudo começa a fazer sentido.</p>
+
+        <button class="primary-button" onclick="startQuiz()">
+          🧠 Testar meu conhecimento
+        </button>
+      </section>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal" id="lessonModal">
+      <div class="modal-content">
+        <button class="close" onclick="closeLesson()">×</button>
+
+        <div id="modalIcon" class="modal-icon">🏠</div>
+
+        <span id="modalNumber" class="badge"> AULA </span>
+
+        <h2 id="modalTitle">IP Privado</h2>
+
+        <p id="modalDescription">Explicação.</p>
+
+        <div class="simple-example">
+          <span>💡</span>
+
+          <div>
+            <strong>Imagine assim:</strong>
+
+            <p id="modalExample">Exemplo.</p>
+          </div>
+        </div>
+
+        <div class="technical-box">
+          <strong>👨‍💻 Na prática:</strong>
+
+          <p id="modalTechnical">Informação técnica.</p>
+        </div>
+
+        <button class="primary-button" onclick="finishLesson()">
+          ✅ Entendi!
+        </button>
+      </div>
+    </div>
+
+    <!-- QUIZ MODAL -->
+    <div class="modal" id="quizModal">
+      <div class="modal-content quiz-modal">
+        <button class="close" onclick="closeQuiz()">×</button>
+
+        <span class="badge"> 🧠 QUIZ </span>
+
+        <h2 id="quizQuestion">Pergunta</h2>
+
+        <div id="quizAnswers" class="answers"></div>
+
+        <p id="quizResult"></p>
+      </div>
+    </div>
+
+    <footer>
+      <p>🌐 Rede Fácil — Aprendendo redes de um jeito simples.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
