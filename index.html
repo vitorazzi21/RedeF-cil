@@ -322,5 +322,519 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- ==========================================
+     NÍVEL AVANÇADO
+=========================================== -->
+
+    <section class="section advanced-section" id="advanced">
+      <div class="section-title">
+        <span class="badge advanced-badge"> 🚀 NÍVEL AVANÇADO </span>
+
+        <h2>Agora vamos trabalhar como no suporte</h2>
+
+        <p>
+          Você já entendeu o básico. Agora vamos conhecer equipamentos,
+          telefonia, autenticação e diferentes tecnologias utilizadas em
+          provedores.
+        </p>
+      </div>
+
+      <!-- ABAS -->
+      <div class="advanced-tabs">
+        <button
+          class="advanced-tab active"
+          onclick="changeAdvancedTab('geral', this)"
+        >
+          🛠️ Rede e Suporte
+        </button>
+
+        <button
+          class="advanced-tab"
+          onclick="changeAdvancedTab('telefonia', this)"
+        >
+          ☎️ Telefonia
+        </button>
+
+        <button class="advanced-tab" onclick="changeAdvancedTab('dax', this)">
+          🟠 Rede Dax
+        </button>
+      </div>
+
+      <!-- ==========================================
+         ABA GERAL
+    =========================================== -->
+
+      <div class="advanced-content active" id="tab-geral">
+        <div class="advanced-grid">
+          <!-- TROCA DE TITULARIDADE -->
+          <article class="advanced-card">
+            <div class="advanced-icon">🔄</div>
+
+            <span class="advanced-category"> CADASTRO </span>
+
+            <h3>Troca de Titularidade</h3>
+
+            <p>
+              O cliente antigo sai e um novo cliente passa a ser responsável
+              pela conexão.
+            </p>
+
+            <button onclick="openAdvancedLesson('titularidade')">
+              Entender →
+            </button>
+          </article>
+
+          <!-- PPPoE -->
+          <article class="advanced-card">
+            <div class="advanced-icon">🔑</div>
+
+            <span class="advanced-category"> AUTENTICAÇÃO </span>
+
+            <h3>PPPoE</h3>
+
+            <p>
+              Entenda por que o login da conexão pode mudar quando muda o
+              titular.
+            </p>
+
+            <button onclick="openAdvancedLesson('pppoe')">Entender →</button>
+          </article>
+
+          <!-- ONU -->
+          <article class="advanced-card">
+            <div class="advanced-icon">📦</div>
+
+            <span class="advanced-category"> EQUIPAMENTOS </span>
+
+            <h3>ONU</h3>
+
+            <p>
+              Equipamento que recebe o sinal óptico da fibra e o transforma para
+              utilização pelo cliente.
+            </p>
+
+            <button onclick="openAdvancedLesson('onu')">Entender →</button>
+          </article>
+
+          <!-- ONT -->
+          <article class="advanced-card">
+            <div class="advanced-icon">📡</div>
+
+            <span class="advanced-category"> EQUIPAMENTOS </span>
+
+            <h3>ONT</h3>
+
+            <p>
+              Equipamento óptico instalado no lado do cliente, muitas vezes já
+              com funções de rede integradas.
+            </p>
+
+            <button onclick="openAdvancedLesson('ont')">Entender →</button>
+          </article>
+
+          <!-- ROTEADOR -->
+          <article class="advanced-card">
+            <div class="advanced-icon">📶</div>
+
+            <span class="advanced-category"> EQUIPAMENTOS </span>
+
+            <h3>Roteador</h3>
+
+            <p>
+              É quem organiza a rede do cliente e distribui a conexão para os
+              dispositivos.
+            </p>
+
+            <button onclick="openAdvancedLesson('roteador')">Entender →</button>
+          </article>
+
+          <!-- PTO -->
+          <article class="advanced-card">
+            <div class="advanced-icon">🔌</div>
+
+            <span class="advanced-category"> FIBRA </span>
+
+            <h3>PTO</h3>
+
+            <p>
+              O ponto onde a fibra óptica termina dentro da instalação do
+              cliente.
+            </p>
+
+            <button onclick="openAdvancedLesson('pto')">Entender →</button>
+          </article>
+
+          <!-- GPON -->
+          <article class="advanced-card">
+            <div class="advanced-icon">💚</div>
+
+            <span class="advanced-category"> TECNOLOGIA </span>
+
+            <h3>GPON</h3>
+
+            <p>
+              Uma das tecnologias utilizadas para entregar Internet através de
+              fibra óptica.
+            </p>
+
+            <button onclick="openAdvancedLesson('gpon')">Entender →</button>
+          </article>
+
+          <!-- EPON -->
+          <article class="advanced-card">
+            <div class="advanced-icon">🟠</div>
+
+            <span class="advanced-category"> TECNOLOGIA </span>
+
+            <h3>EPON</h3>
+
+            <p>
+              Outra tecnologia de rede óptica utilizada para conectar clientes
+              através de fibra.
+            </p>
+
+            <button onclick="openAdvancedLesson('epon')">Entender →</button>
+          </article>
+        </div>
+      </div>
+
+      <!-- ==========================================
+         ABA TELEFONIA
+    =========================================== -->
+
+      <div class="advanced-content" id="tab-telefonia">
+        <div class="advanced-intro">
+          <div class="advanced-intro-icon">☎️</div>
+
+          <div>
+            <span class="advanced-category"> TELEFONIA </span>
+
+            <h3>Como funciona uma ligação?</h3>
+
+            <p>
+              Em telefonia IP, a ligação também utiliza a rede. O cliente possui
+              uma identificação, chamada de ramal, que pode ser registrada em um
+              equipamento ou aplicativo.
+            </p>
+          </div>
+        </div>
+
+        <div class="advanced-grid">
+          <!-- RAMAL -->
+          <article class="advanced-card">
+            <div class="advanced-icon">☎️</div>
+
+            <span class="advanced-category"> TELEFONIA </span>
+
+            <h3>O que é Ramal?</h3>
+
+            <p>
+              É como uma identificação interna utilizada pelo sistema de
+              telefonia.
+            </p>
+
+            <button onclick="openAdvancedLesson('ramal')">Entender →</button>
+          </article>
+
+          <!-- MICROSIP -->
+          <article class="advanced-card">
+            <div class="advanced-icon">💻</div>
+
+            <span class="advanced-category"> TELEFONIA </span>
+
+            <h3>O que é MicroSIP?</h3>
+
+            <p>
+              Um programa que transforma o computador em um telefone para
+              realizar e receber ligações.
+            </p>
+
+            <button onclick="openAdvancedLesson('microsip')">Entender →</button>
+          </article>
+
+          <!-- SIP -->
+          <article class="advanced-card">
+            <div class="advanced-icon">🔗</div>
+
+            <span class="advanced-category"> TELEFONIA </span>
+
+            <h3>Ramal + MicroSIP</h3>
+
+            <p>
+              Entenda como o programa utiliza os dados do ramal para registrar a
+              telefonia.
+            </p>
+
+            <button onclick="openAdvancedLesson('ramalMicrosip')">
+              Entender →
+            </button>
+          </article>
+        </div>
+
+        <!-- FLUXO TELEFONIA -->
+
+        <div class="advanced-flow">
+          <h3>☎️ Caminho simplificado de uma ligação</h3>
+
+          <div class="flow-line">
+            <div class="flow-box">
+              💻
+              <strong>MicroSIP</strong>
+              <small>Inicia a ligação</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+              🔑
+              <strong>Ramal</strong>
+              <small>Identifica o usuário</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+              🖥️
+              <strong>Servidor</strong>
+              <small>Processa a chamada</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+              📞
+              <strong>Destino</strong>
+              <small>Recebe a ligação</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+         ABA REDE DAX
+    =========================================== -->
+
+      <div class="advanced-content" id="tab-dax">
+        <div class="dax-warning">
+          <div class="dax-logo">🟠</div>
+
+          <div>
+            <span class="advanced-category"> ATENÇÃO NO SUPORTE </span>
+
+            <h3>Cliente da Rede Dax</h3>
+
+            <p>
+              Ao identificar que o cliente pertence à Rede Dax, o processo de
+              atendimento pode ser diferente dos clientes da rede GPON
+              tradicional.
+            </p>
+          </div>
+        </div>
+
+        <div class="dax-comparison">
+          <!-- REDE NORMAL -->
+          <div class="network-comparison-card">
+            <span class="comparison-title"> 🟢 Rede GPON </span>
+
+            <h3>Clientes da rede tradicional</h3>
+
+            <div class="comparison-items">
+              <p>✅ Tecnologia GPON</p>
+
+              <p>✅ Equipamentos compatíveis com GPON</p>
+
+              <p>✅ Processo tradicional de liberação</p>
+
+              <p>✅ Sistema utilizado normalmente pelo suporte</p>
+            </div>
+          </div>
+
+          <!-- DAX -->
+          <div class="network-comparison-card dax-card">
+            <span class="comparison-title"> 🟠 Rede Dax </span>
+
+            <h3>Clientes integrados da Dax</h3>
+
+            <div class="comparison-items">
+              <p>🟠 Tecnologia EPON</p>
+
+              <p>🟠 Equipamentos EPON</p>
+
+              <p>🟠 Liberação realizada em outro sistema</p>
+
+              <p>🟠 Processo específico realizado pelo suporte</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASSO A PASSO DAX -->
+
+        <div class="dax-process">
+          <span class="advanced-category"> PASSO A PASSO </span>
+
+          <h3>Cliente Dax chegou no atendimento. E agora?</h3>
+
+          <div class="process-list">
+            <div class="process-step">
+              <span>1</span>
+
+              <div>
+                <strong>Identifique a origem do cliente</strong>
+
+                <p>Primeiro confirme se aquele cliente pertence à Rede Dax.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span>2</span>
+
+              <div>
+                <strong>Observe a tecnologia</strong>
+
+                <p>
+                  Clientes dessa rede utilizam equipamentos relacionados à
+                  tecnologia EPON.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span>3</span>
+
+              <div>
+                <strong>Não trate como GPON</strong>
+
+                <p>
+                  GPON e EPON são tecnologias diferentes. O processo de
+                  liberação do equipamento também pode ser diferente.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span>4</span>
+
+              <div>
+                <strong>Utilize o sistema correto</strong>
+
+                <p>
+                  A liberação do equipamento EPON deve ser realizada no sistema
+                  utilizado pelo suporte para os clientes da Rede Dax.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span>5</span>
+
+              <div>
+                <strong>Depois valide a conexão</strong>
+
+                <p>
+                  Após a liberação, confirme se o equipamento está registrado e
+                  se o cliente voltou a navegar normalmente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GPON VS EPON -->
+
+        <div class="technology-comparison">
+          <span class="advanced-category"> COMPARAÇÃO </span>
+
+          <h3>GPON x EPON</h3>
+
+          <div class="technology-table">
+            <div class="technology-row header-row">
+              <div>Característica</div>
+
+              <div>🟢 GPON</div>
+
+              <div>🟠 EPON</div>
+            </div>
+
+            <div class="technology-row">
+              <div>
+                <strong>Tipo</strong>
+              </div>
+
+              <div>Rede óptica passiva</div>
+
+              <div>Rede óptica passiva</div>
+            </div>
+
+            <div class="technology-row">
+              <div>
+                <strong>Tecnologia</strong>
+              </div>
+
+              <div>GPON</div>
+
+              <div>EPON</div>
+            </div>
+
+            <div class="technology-row">
+              <div>
+                <strong>Equipamento</strong>
+              </div>
+
+              <div>Precisa ser compatível com GPON</div>
+
+              <div>Precisa ser compatível com EPON</div>
+            </div>
+
+            <div class="technology-row">
+              <div>
+                <strong>No suporte</strong>
+              </div>
+
+              <div>Processo GPON</div>
+
+              <div>Processo específico da Rede Dax</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+     MODAL NÍVEL AVANÇADO
+=========================================== -->
+
+    <div class="modal" id="advancedModal">
+      <div class="modal-content advanced-modal">
+        <button class="close" onclick="closeAdvancedLesson()">×</button>
+
+        <div id="advancedModalIcon" class="modal-icon">🚀</div>
+
+        <span id="advancedModalCategory" class="badge"> AVANÇADO </span>
+
+        <h2 id="advancedModalTitle">Título</h2>
+
+        <p id="advancedModalDescription">Descrição</p>
+
+        <div class="simple-example">
+          <span> 💡 </span>
+
+          <div>
+            <strong> Imagine assim: </strong>
+
+            <p id="advancedModalExample">Exemplo</p>
+          </div>
+        </div>
+
+        <div class="technical-box">
+          <strong> 👨‍💻 No suporte: </strong>
+
+          <p id="advancedModalSupport">Informação</p>
+        </div>
+
+        <button class="primary-button" onclick="closeAdvancedLesson()">
+          ✅ Entendi
+        </button>
+      </div>
+    </div>
   </body>
 </html>

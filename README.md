@@ -1,16 +1,18 @@
 # 🌐 Rede Fácil
 
-O **Rede Fácil** é um projeto educativo criado para ensinar conceitos básicos de redes e Internet de forma simples, visual e intuitiva.
+O **Rede Fácil** é uma plataforma educativa e interativa criada para ensinar conceitos de redes, Internet, telefonia e suporte técnico de forma **simples, visual e intuitiva**.
 
-A ideia principal é explicar assuntos técnicos para pessoas que **não possuem conhecimento em redes**, utilizando exemplos do dia a dia, comparações fáceis e uma interface amigável.
+O projeto foi pensado principalmente para pessoas que **não possuem conhecimento técnico em redes**, como profissionais do setor comercial, atendimento, novos colaboradores de provedores de Internet e estudantes que estão começando na área.
 
-O objetivo não é transformar o usuário em um especialista imediatamente, mas fazer com que ele primeiro **entenda o conceito** e depois conheça o termo técnico.
+A proposta é transformar termos técnicos que parecem complicados em explicações fáceis, utilizando **analogias do dia a dia, exemplos visuais, cards interativos, fluxos e quizzes**.
 
 ---
 
-## 🎯 Objetivo do projeto
+## 🎯 Objetivo
 
-Muitas pessoas escutam termos como:
+No ambiente de um provedor de Internet, é comum pessoas de diferentes áreas precisarem entender conceitos técnicos.
+
+Termos como:
 
 - IP Público
 - IP Privado
@@ -18,329 +20,109 @@ Muitas pessoas escutam termos como:
 - CGNAT
 - PPPoE
 - Login
-- DNS
-- Roteador
-- Provedor
+- Ramal
+- MicroSIP
+- ONU
+- ONT
+- PTO
+- GPON
+- EPON
 
-Porém, quando esses conceitos são explicados somente de maneira técnica, podem parecer complicados.
+podem parecer difíceis para quem não trabalha diretamente com redes.
 
-O Rede Fácil tenta resolver isso através de uma abordagem diferente:
+O Rede Fácil foi criado para resolver esse problema.
 
-> Primeiro a pessoa entende através de um exemplo simples. Depois ela aprende o conceito técnico.
+A ideia é:
+
+> **Primeiro entender o conceito de forma simples. Depois conhecer o nome técnico.**
+
+---
+
+# 🧠 Como funciona o aprendizado
+
+O projeto utiliza uma metodologia baseada em **analogia + explicação simples + informação técnica**.
 
 Por exemplo:
 
-**IP Privado**
+### 🏠 IP Privado
 
-Em vez de começar explicando endereçamento de rede, o site apresenta a seguinte comparação:
+Em vez de começar com uma explicação complexa sobre endereçamento IP:
 
-> O IP privado funciona como o número de um apartamento dentro de um prédio.
+> **IP Privado = número do apartamento**
 
-Depois disso, o usuário aprende que IP privado é o endereço utilizado para identificar dispositivos dentro de uma rede local.
-
----
-
-# 👥 Público-alvo
-
-O projeto foi pensado principalmente para:
-
-- Pessoas que estão começando a estudar redes;
-- Novos funcionários de provedores de Internet;
-- Atendentes de suporte técnico;
-- Clientes que desejam entender melhor sua conexão;
-- Estudantes de tecnologia;
-- Pessoas sem conhecimento técnico sobre Internet.
-
-A interface foi criada para ser simples como um site educativo infantil, mas mantendo uma aparência adequada para adultos.
+Depois o usuário entende que o IP privado é utilizado para identificar dispositivos dentro de uma rede local.
 
 ---
 
-# 🧠 Metodologia de ensino
+### 🌎 IP Público
 
-O site utiliza três níveis de aprendizado.
+> **IP Público = endereço do prédio**
 
-## 1. Exemplo do dia a dia
+Depois é explicado que o IP público representa a conexão perante a Internet.
 
-Primeiro é apresentada uma comparação simples.
+---
 
-Exemplo:
+### 🔄 NAT
+
+> **NAT = porteiro**
+
+O usuário entende que o NAT realiza a tradução entre endereços da rede local e a comunicação com a Internet.
+
+---
+
+### 👨‍👩‍👧‍👦 CGNAT
+
+> **CGNAT = várias pessoas compartilhando um endereço externo**
+
+Depois é apresentada a explicação técnica sobre o compartilhamento de endereços IPv4 públicos.
+
+---
+
+# 📚 Nível Básico
+
+O primeiro módulo foi desenvolvido para construir uma base sobre redes.
+
+O usuário aprende:
 
 ```text
-IP Privado = Número do apartamento
+🌐 Como funciona a Internet
 
-IP Público = Endereço do prédio
+🏠 IP Privado
 
-NAT = Porteiro
+🌎 IP Público
 
-Login = Identificação para entrar
+🔄 NAT
 
-CGNAT = Vários clientes compartilhando um endereço externo
+🔑 Login
+
+👨‍👩‍👧‍👦 CGNAT
 ```
 
----
-
-## 2. Explicação simples
-
-Depois da comparação, o conceito é explicado sem utilizar muitos termos técnicos.
-
-Exemplo:
-
-> O IP privado identifica cada aparelho conectado dentro da sua própria rede.
-
----
-
-## 3. Explicação técnica
-
-Somente depois que a pessoa entende a ideia principal, são apresentados termos técnicos.
-
-Exemplo:
+O funcionamento da Internet é apresentado de maneira visual:
 
 ```text
-192.168.1.10
-192.168.1.20
-192.168.1.30
-```
-
-Esses são exemplos de endereços IPv4 privados.
-
-Dessa forma, o usuário consegue associar o conceito técnico a algo que ele já entendeu anteriormente.
-
----
-
-# 🌎 Como o site explica a Internet
-
-O projeto apresenta o funcionamento da Internet através de um caminho visual.
-
-```text
-📱 Celular
-    ↓
+📱 Cliente
+   ↓
 📡 Roteador
-    ↓
+   ↓
 🏢 Provedor
-    ↓
+   ↓
 🌐 Internet
-    ↓
+   ↓
 🖥️ Servidor
 ```
 
-De maneira simplificada:
-
-1. O celular ou computador faz uma solicitação.
-2. O roteador recebe essa solicitação.
-3. O provedor encaminha a comunicação.
-4. A solicitação percorre a Internet.
-5. O servidor recebe o pedido.
-6. O servidor envia uma resposta.
-7. A informação retorna para o dispositivo.
-
----
-
-# 📚 Conceitos ensinados
-
-## 🏠 IP Privado
-
-O IP privado identifica equipamentos dentro de uma rede local.
-
-Exemplo:
-
-```text
-Roteador
-│
-├── Celular      → 192.168.1.10
-├── Computador   → 192.168.1.20
-└── Televisão    → 192.168.1.30
-```
-
-Uma comparação simples:
-
-> O IP privado é como o número de um apartamento.
-
----
-
-## 🌎 IP Público
-
-O IP público é utilizado para representar uma conexão perante a Internet.
-
-Comparação:
-
-> Se o IP privado é o apartamento, o IP público é o endereço do prédio.
-
-Exemplo:
-
-```text
-Celular
-   ↓
-Roteador
-   ↓
-IP Público
-   ↓
-Internet
-```
-
----
-
-## 🔄 NAT
-
-NAT significa:
-
-```text
-Network Address Translation
-```
-
-Ou:
-
-```text
-Tradução de Endereços de Rede
-```
-
-Ele permite que vários dispositivos utilizando endereços privados consigam acessar a Internet.
-
-Comparação:
-
-> O NAT funciona como um porteiro.
-
-O porteiro sabe para qual apartamento determinada informação deve ser enviada.
-
-Exemplo:
-
-```text
-Celular → 192.168.1.10
-PC      → 192.168.1.20
-TV      → 192.168.1.30
-
-             ↓
-
-           NAT
-
-             ↓
-
-         Internet
-```
-
----
-
-# 🔑 Login
-
-Em alguns provedores, principalmente utilizando PPPoE, existe um usuário e uma senha responsáveis pela autenticação da conexão.
-
-Exemplo:
-
-```text
-Login: cliente123
-Senha: ********
-```
-
-O funcionamento pode ser entendido assim:
-
-```text
-Roteador
-   ↓
-Login + Senha
-   ↓
-Servidor do provedor
-   ↓
-Autenticação
-   ↓
-Internet liberada
-```
-
-Comparação:
-
-> O login funciona como uma identificação utilizada para entrar em um local autorizado.
-
----
-
-# 👨‍👩‍👧‍👦 CGNAT
-
-CGNAT significa:
-
-```text
-Carrier-Grade NAT
-```
-
-É uma tecnologia utilizada por provedores para permitir que vários clientes compartilhem um mesmo endereço IPv4 público.
-
-Exemplo:
-
-```text
-Cliente A ─┐
-Cliente B ─┤
-Cliente C ─┼──→ CGNAT ──→ IP Público ──→ Internet
-Cliente D ─┤
-Cliente E ─┘
-```
-
-Comparação:
-
-> Imagine várias pessoas utilizando um mesmo endereço externo, mas cada uma possuindo sua própria identificação interna.
-
-O CGNAT é muito utilizado devido à quantidade limitada de endereços IPv4 disponíveis.
-
----
-
-# 🎮 Sistema de aprendizado
-
-O site possui cards de aprendizado.
-
-Cada card representa uma aula.
-
-Exemplo:
-
-```text
-AULA 01
-IP Privado
-
-AULA 02
-IP Público
-
-AULA 03
-NAT
-
-AULA 04
-Login
-
-AULA 05
-CGNAT
-```
-
-Quando o usuário clica em uma aula, uma janela é aberta apresentando:
-
-- Explicação simples;
-- Exemplo do cotidiano;
-- Explicação técnica;
-- Botão de conclusão.
-
----
-
-# 📊 Sistema de progresso
-
-O site possui uma barra que acompanha o progresso do usuário.
-
-Exemplo:
-
-```text
-0%  → Nenhuma aula concluída
-
-20% → 1 aula concluída
-
-40% → 2 aulas concluídas
-
-60% → 3 aulas concluídas
-
-80% → 4 aulas concluídas
-
-100% → Todas as aulas concluídas
-```
-
-Isso cria uma sensação de evolução durante o aprendizado.
+O objetivo é fazer com que uma pessoa sem conhecimento técnico consiga visualizar o caminho básico de uma comunicação.
 
 ---
 
 # 🧠 Quiz
 
-Depois das aulas, o usuário pode realizar um pequeno quiz.
+Depois das primeiras aulas, o usuário pode realizar um quiz para testar seus conhecimentos.
 
-O objetivo é verificar se os conceitos realmente foram compreendidos.
+O sistema apresenta perguntas relacionadas aos conceitos estudados e informa imediatamente se a resposta está correta.
+
+Ao final, o usuário recebe sua pontuação.
 
 Exemplo:
 
@@ -354,60 +136,330 @@ C) DNS
 D) Servidor
 ```
 
-Após responder, o sistema informa imediatamente se a resposta está correta.
+O sistema também possui uma barra de progresso para mostrar a evolução do usuário.
 
-Ao finalizar, o usuário recebe sua pontuação.
+---
+
+# 🚀 Nível Avançado
+
+Depois de aprender os conceitos básicos, o usuário pode acessar o módulo:
+
+> **🚀 Nível Avançado — Rede e Suporte**
+
+Essa área aproxima o aprendizado da realidade encontrada em um provedor de Internet.
+
+São apresentados conceitos relacionados a:
+
+- Autenticação;
+- PPPoE;
+- Troca de titularidade;
+- Equipamentos;
+- Fibra óptica;
+- GPON;
+- EPON;
+- Telefonia;
+- Atendimento e suporte.
+
+---
+
+# 🔄 Troca de Titularidade
+
+O projeto explica de maneira simples o que acontece quando uma conexão passa de um cliente para outro.
+
+Exemplo:
+
+```text
+CLIENTE ANTIGO
+      ↓
+Contrato antigo
+      ↓
+PPPoE antigo
+
+
+        🔄
+
+
+CLIENTE NOVO
+      ↓
+Novo cadastro
+      ↓
+Novo PPPoE
+```
+
+A ideia é explicar que, dependendo do processo utilizado pelo provedor, o login PPPoE pode ser alterado para que a autenticação fique vinculada corretamente ao novo cliente.
+
+---
+
+# 🔑 PPPoE
+
+O PPPoE é explicado como uma forma de autenticação da conexão.
+
+Uma analogia utilizada pelo projeto é:
+
+> **PPPoE = crachá de identificação**
+
+O roteador utiliza informações de autenticação, como usuário e senha, para estabelecer a conexão com a rede do provedor.
+
+Exemplo:
+
+```text
+📡 Roteador
+     ↓
+🔑 Login + Senha
+     ↓
+🖥️ Servidor do provedor
+     ↓
+✅ Autenticado
+     ↓
+🌐 Internet
+```
+
+---
+
+# ☎️ Módulo de Telefonia
+
+O Rede Fácil também possui uma área específica para explicar conceitos básicos de telefonia IP.
+
+São apresentados:
+
+- Ramal;
+- MicroSIP;
+- Conta SIP;
+- Registro;
+- Funcionamento básico de uma ligação.
+
+---
+
+## ☎️ O que é um Ramal?
+
+O ramal é apresentado como uma identificação utilizada dentro do sistema de telefonia.
+
+Exemplo:
+
+```text
+Número principal
+       ↓
+Empresa
+       ↓
+├── Ramal 101
+├── Ramal 102
+└── Ramal 103
+```
+
+A analogia facilita a compreensão de que cada usuário ou telefone pode possuir uma identificação própria dentro do sistema.
+
+---
+
+# 💻 O que é MicroSIP?
+
+O MicroSIP é explicado como um **telefone dentro do computador**.
+
+Ele é um softphone utilizado para realizar e receber chamadas através da rede.
+
+De forma simples:
+
+```text
+💻 Computador
+     ↓
+📞 MicroSIP
+     ↓
+🔑 Ramal / Conta SIP
+     ↓
+🖥️ Sistema de telefonia
+     ↓
+☎️ Ligação
+```
+
+O objetivo do módulo é deixar claro que:
+
+> **MicroSIP é o programa utilizado para telefonia.**
+
+Enquanto:
+
+> **Ramal é a identificação/conta utilizada dentro do sistema de telefonia.**
+
+---
+
+# 📦 Equipamentos
+
+O módulo avançado apresenta os principais equipamentos encontrados em uma instalação de Internet.
+
+São abordados:
+
+### 📦 ONU
+
+Equipamento relacionado à comunicação óptica entre a rede do provedor e o cliente.
+
+### 📡 ONT
+
+Terminal óptico localizado no lado do cliente.
+
+### 📶 Roteador
+
+Equipamento responsável por organizar e distribuir a conexão para os dispositivos do cliente.
+
+### 🔌 PTO
+
+Ponto de Terminação Óptica, onde a fibra termina na instalação do cliente.
+
+O projeto utiliza explicações simples antes de apresentar os detalhes técnicos.
+
+---
+
+# 💚 GPON x 🟠 EPON
+
+Um dos objetivos do módulo avançado é mostrar que existem diferentes tecnologias de rede óptica.
+
+O projeto apresenta uma comparação simplificada:
+
+```text
+🟢 GPON
+Rede óptica
+     ↓
+Equipamentos compatíveis
+     ↓
+Processo GPON
+
+
+🟠 EPON
+Rede óptica
+     ↓
+Equipamentos compatíveis
+     ↓
+Processo EPON
+```
+
+Para o público não técnico, o projeto utiliza a expressão:
+
+> **Roteador GPON**
+
+ou
+
+> **Roteador EPON**
+
+quando essa é a forma mais fácil de identificar o equipamento utilizado no atendimento.
+
+Para usuários que desejarem aprofundar o conhecimento, existe a possibilidade de apresentar posteriormente uma explicação técnica sobre a diferença entre **tecnologia óptica e função de roteamento**.
+
+---
+
+# 🟠 Área Especial — Rede Dax
+
+O projeto possui uma área específica destinada aos clientes da **Rede Dax**.
+
+Essa área foi criada porque esses clientes possuem um processo de atendimento diferente do fluxo tradicional apresentado no módulo GPON.
+
+Para facilitar o entendimento de pessoas do comercial e atendimento, a explicação é apresentada de maneira simples:
+
+```text
+CLIENTE REDE TRADICIONAL
+        ↓
+🟢 GPON
+        ↓
+Processo tradicional
+
+
+CLIENTE REDE DAX
+        ↓
+🟠 Roteador EPON
+        ↓
+Processo específico
+        ↓
+Liberação em sistema próprio
+        ↓
+Suporte
+```
+
+---
+
+# 🟠 Processo simplificado para clientes Dax
+
+Quando um cliente da Rede Dax entra em contato, o profissional deve primeiro identificar que ele pertence a essa rede.
+
+O fluxo apresentado no projeto é:
+
+```text
+1️⃣ Identificar o cliente
+
+        ↓
+
+2️⃣ Verificar que pertence à Rede Dax
+
+        ↓
+
+3️⃣ Identificar o equipamento EPON
+
+        ↓
+
+4️⃣ Utilizar o processo/sistema específico
+
+        ↓
+
+5️⃣ Realizar a liberação do equipamento
+
+        ↓
+
+6️⃣ Validar a conexão
+```
+
+A intenção não é ensinar procedimentos internos confidenciais, mas criar uma **visão geral do processo** para que profissionais de outras áreas entendam por que um cliente Dax pode seguir um fluxo diferente.
+
+---
+
+# 🏢 Público-alvo
+
+O Rede Fácil foi desenvolvido principalmente para:
+
+- 👨‍💼 Profissionais do comercial;
+- 🎧 Atendentes de suporte;
+- 👨‍💻 Técnicos iniciantes;
+- 🎓 Estudantes de redes;
+- 🏢 Funcionários de provedores;
+- 👥 Pessoas que desejam entender melhor como funciona a Internet.
+
+O conteúdo pode ser utilizado como material de apoio para **treinamentos internos e onboarding de novos colaboradores**.
 
 ---
 
 # 🎨 Conceito visual
 
-O design do projeto foi pensado para ser:
+O design foi inspirado em plataformas educativas simples.
 
-- Simples;
-- Amigável;
-- Colorido;
-- Visual;
-- Intuitivo;
-- Responsivo;
-- Fácil de navegar.
+A interface utiliza:
 
-Em vez de apresentar grandes blocos de texto, são utilizados:
-
-- Emojis;
 - Cards;
+- Emojis;
 - Ícones;
+- Cores;
 - Animações;
-- Diagramas;
-- Comparações;
-- Pequenas explicações;
-- Interações.
+- Fluxogramas;
+- Modais;
+- Quizzes;
+- Barra de progresso.
 
-A intenção é evitar que o usuário tenha a sensação de estar lendo uma documentação técnica.
+A ideia é criar uma experiência parecida com um **site educativo infantil**, porém com conteúdo voltado para adultos e profissionais.
 
 ---
 
 # 📱 Responsividade
 
-O projeto funciona em diferentes tamanhos de tela.
-
-Pode ser utilizado em:
+O projeto foi desenvolvido para funcionar em:
 
 ```text
-💻 Computadores
+💻 Desktop
 
-📱 Celulares
+📱 Smartphone
 
-📲 Tablets
+📲 Tablet
 ```
 
-Os cards e elementos da página se reorganizam automaticamente em telas menores.
+Os elementos são reorganizados automaticamente de acordo com o tamanho da tela.
 
 ---
 
-# 🛠️ Tecnologias utilizadas
+# 🛠️ Tecnologias
 
-O projeto foi desenvolvido utilizando tecnologias básicas da Web:
+O projeto utiliza tecnologias básicas do desenvolvimento Web:
 
 ```text
 HTML5
@@ -415,9 +467,7 @@ CSS3
 JavaScript
 ```
 
-Não é necessário utilizar frameworks ou bibliotecas externas.
-
-Isso torna o projeto simples para estudar, modificar e hospedar.
+Não são necessários frameworks ou bibliotecas externas para executar a versão atual.
 
 ---
 
@@ -432,34 +482,34 @@ rede-facil/
 └── README.md
 ```
 
-### index.html
+### `index.html`
 
-Responsável pela estrutura da página.
+Responsável pela estrutura e conteúdo da aplicação.
 
-### style.css
+### `style.css`
 
-Responsável pelo design, cores, animações e responsividade.
+Responsável pelo design, responsividade, animações e aparência dos componentes.
 
-### script.js
+### `script.js`
 
-Responsável pelas interações, aulas, progresso e quiz.
+Responsável pelas interações, aulas, modais, progresso, quiz e conteúdos avançados.
 
-### README.md
+### `README.md`
 
-Explica o objetivo e funcionamento do projeto.
+Documentação e apresentação do projeto.
 
 ---
 
-# 🚀 Como executar o projeto
+# 🚀 Como executar
 
 Clone ou baixe o projeto.
 
-Depois abra a pasta no Visual Studio Code.
+Abra a pasta no **Visual Studio Code**.
 
-A estrutura deve ficar assim:
+Certifique-se de que os arquivos estejam organizados:
 
 ```text
-rede-facil
+rede-facil/
 │
 ├── index.html
 ├── style.css
@@ -467,93 +517,42 @@ rede-facil
 └── README.md
 ```
 
-Depois basta abrir:
+Depois abra o arquivo:
 
 ```text
 index.html
 ```
 
-no navegador.
+diretamente no navegador.
 
-Também é possível utilizar a extensão:
-
-```text
-Live Server
-```
-
-do Visual Studio Code.
-
-Clique com o botão direito sobre o arquivo `index.html` e selecione:
-
-```text
-Open with Live Server
-```
-
----
-
-# 💡 Ideia principal
-
-O Rede Fácil parte de uma ideia simples:
-
-> Uma pessoa não precisa conhecer redes para começar a entender como a Internet funciona.
-
-Antes de ensinar:
-
-```text
-IPv4
-NAT
-CGNAT
-PPPoE
-DNS
-DHCP
-```
-
-é necessário construir uma base.
-
-Por isso, o projeto utiliza analogias.
-
-```text
-🏠 Apartamento → IP Privado
-
-🏢 Endereço do prédio → IP Público
-
-👨 Porteiro → NAT
-
-🔑 Identificação → Login
-
-👨‍👩‍👧‍👦 Compartilhamento → CGNAT
-```
-
-Depois que a pessoa cria essa imagem mental, os conceitos técnicos passam a fazer muito mais sentido.
+Também é possível utilizar a extensão **Live Server** no Visual Studio Code.
 
 ---
 
 # 🔮 Futuras melhorias
 
-O projeto pode futuramente receber novos módulos, como:
+O projeto pode receber novos módulos futuramente:
 
 ```text
-📡 Wi-Fi 2.4 GHz e 5 GHz
+📡 Wi-Fi 2.4 GHz x 5 GHz
 
 🌐 DNS
 
-📦 Pacotes
-
 📍 DHCP
+
+📦 Pacotes
 
 🛣️ Roteamento
 
 🔌 Cabo de rede
 
-💡 ONU e ONT
-
-🔦 Fibra óptica
+💡 Fibra óptica
 
 🏢 OLT
 
 📶 Sinal óptico
 
-🚪 Portas TCP e UDP
+🚪 Portas TCP/UDP
 
 🎮 Ping
 
@@ -561,36 +560,37 @@ O projeto pode futuramente receber novos módulos, como:
 
 🔐 Firewall
 
-🌍 IPv4 e IPv6
+🌍 IPv4 x IPv6
 
-📡 PPPoE
+📞 Telefonia IP
+
+🧰 Diagnóstico de problemas
 ```
 
 Também podem ser adicionados:
 
-- Mais quizzes;
-- Pontuação;
+- Sistema de pontuação;
+- Certificados;
 - Conquistas;
-- Certificado;
-- Modo iniciante;
-- Modo técnico;
-- Simuladores;
-- Animações;
-- Diagramas interativos.
+- Mais quizzes;
+- Simuladores de rede;
+- Animações de pacotes;
+- Fluxos interativos;
+- Modo Comercial;
+- Modo Suporte;
+- Modo Técnico.
 
 ---
 
 # 🎯 Visão do projeto
 
-A proposta do **Rede Fácil** é transformar conceitos que parecem difíceis em explicações que qualquer pessoa consiga compreender.
+O **Rede Fácil** nasceu com uma proposta simples:
 
-O objetivo final é que alguém que inicialmente diga:
+> **Explicar tecnologia complexa de uma maneira que qualquer pessoa consiga entender.**
 
-> "Eu não entendo nada de redes."
+O projeto busca aproximar pessoas não técnicas do universo de redes, permitindo que elas entendam primeiro **o que está acontecendo** e só depois aprendam **como aquilo é chamado tecnicamente**.
 
-Depois de utilizar o site consiga explicar:
-
-> "Agora eu entendo o que é IP privado, IP público, NAT e CGNAT."
+A ideia é que alguém que nunca estudou redes consiga entrar no site e, depois de alguns minutos, compreender conceitos que antes pareciam complicados.
 
 ---
 

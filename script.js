@@ -83,7 +83,7 @@ const lessons = {
 
 
 // ==========================================
-// ELEMENTOS
+// ELEMENTOS DAS AULAS
 // ==========================================
 
 const modal = document.getElementById("lessonModal");
@@ -183,11 +183,23 @@ function updateProgress() {
     const percentage =
         Math.round((completed / total) * 100);
 
-    document.getElementById("progressBar").style.width =
-        percentage + "%";
+    const progressBar =
+        document.getElementById("progressBar");
 
-    document.getElementById("progressText").textContent =
-        percentage + "%";
+    const progressText =
+        document.getElementById("progressText");
+
+
+    if (progressBar) {
+        progressBar.style.width =
+            percentage + "%";
+    }
+
+
+    if (progressText) {
+        progressText.textContent =
+            percentage + "%";
+    }
 
 }
 
@@ -198,7 +210,12 @@ function updateProgress() {
 
 function scrollToLessons() {
 
-    document.getElementById("lessons").scrollIntoView({
+    const lessonsSection =
+        document.getElementById("lessons");
+
+    if (!lessonsSection) return;
+
+    lessonsSection.scrollIntoView({
         behavior: "smooth"
     });
 
@@ -287,7 +304,8 @@ const quiz = [
 let currentQuestion = 0;
 let score = 0;
 
-const quizModal = document.getElementById("quizModal");
+const quizModal =
+    document.getElementById("quizModal");
 
 const quizQuestion =
     document.getElementById("quizQuestion");
@@ -309,9 +327,13 @@ function startQuiz() {
 
     score = 0;
 
-    quizResult.textContent = "";
+    if (quizResult) {
+        quizResult.textContent = "";
+    }
 
-    quizModal.classList.add("active");
+    if (quizModal) {
+        quizModal.classList.add("active");
+    }
 
     showQuestion();
 
@@ -326,14 +348,26 @@ function showQuestion() {
 
     const question = quiz[currentQuestion];
 
-    quizQuestion.textContent =
-        `${currentQuestion + 1}/${quiz.length} — ${question.question}`;
+    if (!question) return;
+
+
+    if (quizQuestion) {
+
+        quizQuestion.textContent =
+            `${currentQuestion + 1}/${quiz.length} — ${question.question}`;
+
+    }
+
+
+    if (!quizAnswers) return;
 
     quizAnswers.innerHTML = "";
 
+
     question.answers.forEach((answer, index) => {
 
-        const button = document.createElement("button");
+        const button =
+            document.createElement("button");
 
         button.className = "answer";
 
@@ -350,15 +384,19 @@ function showQuestion() {
 
 
 // ==========================================
-// RESPONDER
+// RESPONDER QUIZ
 // ==========================================
 
 function answerQuestion(selected) {
 
     const question = quiz[currentQuestion];
 
+    if (!question) return;
+
+
     const buttons =
         document.querySelectorAll(".answer");
+
 
     buttons.forEach(button => {
 
@@ -369,21 +407,32 @@ function answerQuestion(selected) {
 
     if (selected === question.correct) {
 
-        buttons[selected].classList.add("correct");
+        if (buttons[selected]) {
+            buttons[selected].classList.add("correct");
+        }
 
         score++;
 
-        quizResult.textContent =
-            "🎉 Muito bem! Você acertou.";
+        if (quizResult) {
+            quizResult.textContent =
+                "🎉 Muito bem! Você acertou.";
+        }
 
     } else {
 
-        buttons[selected].classList.add("wrong");
+        if (buttons[selected]) {
+            buttons[selected].classList.add("wrong");
+        }
 
-        buttons[question.correct].classList.add("correct");
+        if (buttons[question.correct]) {
+            buttons[question.correct]
+                .classList.add("correct");
+        }
 
-        quizResult.textContent =
-            "🤔 Quase! A resposta correta está destacada.";
+        if (quizResult) {
+            quizResult.textContent =
+                "🤔 Quase! A resposta correta está destacada.";
+        }
 
     }
 
@@ -392,9 +441,12 @@ function answerQuestion(selected) {
 
         currentQuestion++;
 
+
         if (currentQuestion < quiz.length) {
 
-            quizResult.textContent = "";
+            if (quizResult) {
+                quizResult.textContent = "";
+            }
 
             showQuestion();
 
@@ -415,32 +467,49 @@ function answerQuestion(selected) {
 
 function finishQuiz() {
 
-    quizQuestion.textContent =
-        "🎉 Quiz concluído!";
+    if (quizQuestion) {
 
-    quizAnswers.innerHTML = "";
+        quizQuestion.textContent =
+            "🎉 Quiz concluído!";
 
-    quizResult.innerHTML = `
-        Você acertou <strong>${score}</strong>
-        de <strong>${quiz.length}</strong> perguntas.
-        <br><br>
-        ${getQuizMessage()}
-        <br><br>
+    }
 
-        <button
-            class="primary-button"
-            onclick="closeQuiz()">
 
-            Fechar
+    if (quizAnswers) {
 
-        </button>
-    `;
+        quizAnswers.innerHTML = "";
+
+    }
+
+
+    if (quizResult) {
+
+        quizResult.innerHTML = `
+            Você acertou <strong>${score}</strong>
+            de <strong>${quiz.length}</strong> perguntas.
+
+            <br><br>
+
+            ${getQuizMessage()}
+
+            <br><br>
+
+            <button
+                class="primary-button"
+                onclick="closeQuiz()">
+
+                Fechar
+
+            </button>
+        `;
+
+    }
 
 }
 
 
 // ==========================================
-// MENSAGEM FINAL
+// MENSAGEM FINAL DO QUIZ
 // ==========================================
 
 function getQuizMessage() {
@@ -451,11 +520,13 @@ function getQuizMessage() {
 
     }
 
+
     if (score >= 3) {
 
         return "👏 Muito bom! Você já entendeu bastante coisa.";
 
     }
+
 
     return "💪 Continue estudando. Redes ficam fáceis quando você entende os conceitos básicos.";
 
@@ -468,13 +539,18 @@ function getQuizMessage() {
 
 function closeQuiz() {
 
-    quizModal.classList.remove("active");
+    if (quizModal) {
+
+        quizModal.classList.remove("active");
+
+    }
 
 }
 
 
 // ==========================================
-// FECHAR MODAL CLICANDO FORA
+// FECHAR MODAL DAS AULAS
+// CLICANDO FORA
 // ==========================================
 
 window.addEventListener("click", (event) => {
@@ -485,9 +561,413 @@ window.addEventListener("click", (event) => {
 
     }
 
+
     if (event.target === quizModal) {
 
         closeQuiz();
+
+    }
+
+});
+
+
+// ==========================================
+// CONTEÚDOS AVANÇADOS
+// ==========================================
+
+const advancedLessons = {
+
+    titularidade: {
+
+        icon: "🔄",
+
+        category: "CADASTRO",
+
+        title: "Troca de Titularidade",
+
+        description:
+            "A troca de titularidade acontece quando a conexão deixa de ficar no nome de uma pessoa e passa para outra.",
+
+        example:
+            "Imagine uma casa alugada. João era o responsável pela Internet, mas se mudou. Maria passa a morar na casa e agora será a nova responsável pelo contrato.",
+
+        support:
+            "No processo utilizado pela operação, o cadastro do cliente muda e o PPPoE antigo pode ser substituído pelo PPPoE relacionado ao novo titular. Assim, a autenticação da conexão fica vinculada corretamente ao novo cliente."
+
+    },
+
+
+    pppoe: {
+
+        icon: "🔑",
+
+        category: "AUTENTICAÇÃO",
+
+        title: "PPPoE",
+
+        description:
+            "O PPPoE é uma forma utilizada por provedores para autenticar a conexão do cliente utilizando usuário e senha.",
+
+        example:
+            "Pense no PPPoE como um crachá. O roteador apresenta esse crachá ao provedor para provar qual cliente está tentando acessar a rede.",
+
+        support:
+            "Quando ocorre uma troca de titularidade, o login PPPoE pode mudar porque a autenticação precisa ficar associada ao novo cadastro. O processo exato depende das regras e sistemas utilizados pelo provedor."
+
+    },
+
+
+    onu: {
+
+        icon: "📦",
+
+        category: "EQUIPAMENTOS",
+
+        title: "ONU",
+
+        description:
+            "ONU significa Optical Network Unit. É um equipamento que participa da comunicação entre a rede óptica do provedor e a rede do cliente.",
+
+        example:
+            "A fibra chega trazendo informação através de luz. A ONU ajuda a transformar essa comunicação óptica em algo que os equipamentos da rede conseguem utilizar.",
+
+        support:
+            "Ao atender um cliente, é importante verificar se a ONU está registrada, se possui sinal óptico adequado e se apresenta alarmes como LOS."
+
+    },
+
+
+    ont: {
+
+        icon: "📡",
+
+        category: "EQUIPAMENTOS",
+
+        title: "ONT",
+
+        description:
+            "ONT significa Optical Network Terminal. É o terminal óptico instalado no lado do assinante.",
+
+        example:
+            "Pense na ONT como o equipamento que recebe a fibra dentro da casa e entrega a conexão para a rede do cliente.",
+
+        support:
+            "ONT é, tecnicamente, um tipo de ONU usado como terminal no cliente. Alguns modelos possuem apenas portas de rede, enquanto outros também possuem Wi-Fi, telefonia e funções de roteador."
+
+    },
+
+
+    roteador: {
+
+        icon: "📶",
+
+        category: "EQUIPAMENTOS",
+
+        title: "Roteador",
+
+        description:
+            "O roteador cria e organiza a rede local do cliente e encaminha o tráfego entre essa rede e outras redes.",
+
+        example:
+            "Imagine um guarda de trânsito. Ele observa para onde cada informação precisa ir e manda cada uma para o caminho correto.",
+
+        support:
+            "No atendimento podemos verificar autenticação, endereço WAN, DHCP, Wi-Fi, dispositivos conectados, portas LAN e outras configurações."
+
+    },
+
+
+    pto: {
+
+        icon: "🔌",
+
+        category: "FIBRA",
+
+        title: "PTO",
+
+        description:
+            "PTO significa Ponto de Terminação Óptica. É o ponto onde a fibra da instalação termina dentro do local do cliente.",
+
+        example:
+            "É parecido com uma tomada. A fibra chega até aquele ponto e, a partir dali, um cordão óptico conecta a PTO ao equipamento do cliente.",
+
+        support:
+            "Problemas físicos na PTO, no conector ou no cordão óptico podem afetar o nível de sinal e causar instabilidade ou perda de conexão."
+
+    },
+
+
+    gpon: {
+
+        icon: "💚",
+
+        category: "TECNOLOGIA",
+
+        title: "GPON",
+
+        description:
+            "GPON é uma tecnologia de rede óptica passiva muito utilizada por provedores para fornecer Internet através de fibra.",
+
+        example:
+            "Imagine uma estrada principal de fibra sendo dividida para atender várias casas.",
+
+        support:
+            "Os equipamentos utilizados precisam ser compatíveis com a tecnologia GPON e autorizados na rede correspondente."
+
+    },
+
+
+    epon: {
+
+        icon: "🟠",
+
+        category: "TECNOLOGIA",
+
+        title: "EPON",
+
+        description:
+            "EPON também é uma tecnologia de rede óptica passiva, mas utiliza uma arquitetura e padrões diferentes do GPON.",
+
+        example:
+            "GPON e EPON são como dois sistemas de transporte diferentes. Os dois levam o usuário ao destino, mas utilizam regras e equipamentos compatíveis com cada sistema.",
+
+        support:
+            "Um equipamento EPON não deve ser tratado automaticamente como se fosse GPON. É necessário utilizar o processo e o sistema compatíveis com aquela rede."
+
+    },
+
+
+    ramal: {
+
+        icon: "☎️",
+
+        category: "TELEFONIA",
+
+        title: "O que é um Ramal?",
+
+        description:
+            "O ramal é uma identificação utilizada dentro de um sistema de telefonia.",
+
+        example:
+            "Imagine uma empresa com um número principal. Cada funcionário possui um número interno, como 101, 102 ou 103. Esses números são ramais.",
+
+        support:
+            "Em telefonia IP, o ramal pode possuir usuário, senha e servidor SIP. Essas informações permitem que um telefone ou aplicativo seja registrado no sistema."
+
+    },
+
+
+    microsip: {
+
+        icon: "💻",
+
+        category: "TELEFONIA",
+
+        title: "O que é MicroSIP?",
+
+        description:
+            "MicroSIP é um softphone, ou seja, um programa que permite utilizar o computador como telefone através de tecnologia SIP.",
+
+        example:
+            "É como transformar o computador em um telefone. Você digita um número no programa e consegue realizar uma chamada utilizando a rede.",
+
+        support:
+            "Para funcionar, normalmente o MicroSIP precisa receber as informações da conta SIP, como usuário ou ramal, senha e servidor."
+
+    },
+
+
+    ramalMicrosip: {
+
+        icon: "🔗",
+
+        category: "TELEFONIA",
+
+        title: "Ramal + MicroSIP",
+
+        description:
+            "O MicroSIP precisa registrar uma conta de telefonia para conseguir realizar e receber chamadas.",
+
+        example:
+            "O MicroSIP é o telefone. O ramal é a identidade daquele telefone dentro do sistema.",
+
+        support:
+            "Quando os dados são configurados corretamente, o MicroSIP tenta registrar o ramal no servidor SIP. Depois do registro, o usuário pode realizar e receber chamadas conforme as permissões da conta."
+
+    }
+
+};
+
+
+// ==========================================
+// TROCAR ABAS AVANÇADAS
+// ==========================================
+
+function changeAdvancedTab(tabName, button) {
+
+    const contents =
+        document.querySelectorAll(".advanced-content");
+
+    const tabs =
+        document.querySelectorAll(".advanced-tab");
+
+
+    contents.forEach(content => {
+
+        content.classList.remove("active");
+
+    });
+
+
+    tabs.forEach(tab => {
+
+        tab.classList.remove("active");
+
+    });
+
+
+    const selectedContent =
+        document.getElementById(`tab-${tabName}`);
+
+
+    if (selectedContent) {
+
+        selectedContent.classList.add("active");
+
+    }
+
+
+    if (button) {
+
+        button.classList.add("active");
+
+    }
+
+}
+
+
+// ==========================================
+// MODAL AVANÇADO
+// ==========================================
+
+const advancedModal =
+    document.getElementById("advancedModal");
+
+
+function openAdvancedLesson(id) {
+
+    const lesson =
+        advancedLessons[id];
+
+
+    if (!lesson) {
+
+        return;
+
+    }
+
+
+    const icon =
+        document.getElementById("advancedModalIcon");
+
+    const category =
+        document.getElementById("advancedModalCategory");
+
+    const title =
+        document.getElementById("advancedModalTitle");
+
+    const description =
+        document.getElementById("advancedModalDescription");
+
+    const example =
+        document.getElementById("advancedModalExample");
+
+    const support =
+        document.getElementById("advancedModalSupport");
+
+
+    if (icon) {
+
+        icon.textContent =
+            lesson.icon;
+
+    }
+
+
+    if (category) {
+
+        category.textContent =
+            lesson.category;
+
+    }
+
+
+    if (title) {
+
+        title.textContent =
+            lesson.title;
+
+    }
+
+
+    if (description) {
+
+        description.textContent =
+            lesson.description;
+
+    }
+
+
+    if (example) {
+
+        example.textContent =
+            lesson.example;
+
+    }
+
+
+    if (support) {
+
+        support.textContent =
+            lesson.support;
+
+    }
+
+
+    if (advancedModal) {
+
+        advancedModal.classList.add("active");
+
+    }
+
+}
+
+
+// ==========================================
+// FECHAR MODAL AVANÇADO
+// ==========================================
+
+function closeAdvancedLesson() {
+
+    if (advancedModal) {
+
+        advancedModal.classList.remove("active");
+
+    }
+
+}
+
+
+// ==========================================
+// FECHAR MODAL AVANÇADO
+// CLICANDO FORA
+// ==========================================
+
+window.addEventListener("click", (event) => {
+
+    if (event.target === advancedModal) {
+
+        closeAdvancedLesson();
 
     }
 
