@@ -11,7 +11,6 @@
       content="Aprenda conceitos de redes de forma simples e divertida."
     />
 
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style.css?v=3" />
   </head>
 
@@ -44,7 +43,7 @@
 
           <p>
             Aprenda IP, NAT, CGNAT, login e outros conceitos de redes usando
-            exemplos do dia a dia.
+            exemplos simples baseados no dia a dia da AW Fibra.
           </p>
 
           <button class="primary-button" onclick="scrollToLessons()">
@@ -71,7 +70,10 @@
 
           <h2>Como a Internet funciona?</h2>
 
-          <p>Pense na Internet como um sistema de entregas.</p>
+          <p>
+            Pense na Internet como uma grande empresa com departamentos,
+            identificações e acessos organizados.
+          </p>
         </div>
 
         <div class="internet-map">
@@ -80,7 +82,7 @@
 
             <strong>Seu celular</strong>
 
-            <small> Faz o pedido </small>
+            <small>Faz o pedido</small>
           </div>
 
           <div class="arrow">→</div>
@@ -90,7 +92,7 @@
 
             <strong>Roteador</strong>
 
-            <small> Organiza a conexão </small>
+            <small>Organiza a conexão</small>
           </div>
 
           <div class="arrow">→</div>
@@ -100,7 +102,7 @@
 
             <strong>Provedor</strong>
 
-            <small> Leva você para a Internet </small>
+            <small>Leva você para a Internet</small>
           </div>
 
           <div class="arrow">→</div>
@@ -110,7 +112,7 @@
 
             <strong>Internet</strong>
 
-            <small> Encontra o servidor </small>
+            <small>Encontra o servidor</small>
           </div>
 
           <div class="arrow">→</div>
@@ -120,7 +122,7 @@
 
             <strong>Servidor</strong>
 
-            <small> Entrega a resposta </small>
+            <small>Entrega a resposta</small>
           </div>
         </div>
       </section>
@@ -140,24 +142,28 @@
           <article class="lesson-card" data-lesson="1">
             <div class="lesson-icon private">🏠</div>
 
-            <span class="lesson-number"> AULA 01 </span>
+            <span class="lesson-number">AULA 01</span>
 
             <h3>IP Privado</h3>
 
-            <p>O endereço dos aparelhos dentro da sua casa.</p>
+            <p>
+              A identificação de cada equipamento dentro de um departamento.
+            </p>
 
             <button onclick="openLesson(1)">Aprender →</button>
           </article>
 
-          <!-- IP PUBLICO -->
+          <!-- IP PÚBLICO -->
           <article class="lesson-card" data-lesson="2">
             <div class="lesson-icon public">🌎</div>
 
-            <span class="lesson-number"> AULA 02 </span>
+            <span class="lesson-number">AULA 02</span>
 
             <h3>IP Público</h3>
 
-            <p>O endereço da sua conexão na Internet.</p>
+            <p>
+              O endereço que representa a rede quando ela acessa a Internet.
+            </p>
 
             <button onclick="openLesson(2)">Aprender →</button>
           </article>
@@ -166,24 +172,30 @@
           <article class="lesson-card" data-lesson="3">
             <div class="lesson-icon nat">🔄</div>
 
-            <span class="lesson-number"> AULA 03 </span>
+            <span class="lesson-number">AULA 03</span>
 
             <h3>NAT</h3>
 
-            <p>O "tradutor" entre sua rede e a Internet.</p>
+            <p>
+              O responsável por organizar a saída dos equipamentos para a
+              Internet.
+            </p>
 
             <button onclick="openLesson(3)">Aprender →</button>
           </article>
 
-          <!-- LOGIN -->
+          <!-- IP PÚBLICO DINÂMICO -->
           <article class="lesson-card" data-lesson="4">
-            <div class="lesson-icon login">🔑</div>
+            <div class="lesson-icon public">🎫</div>
 
-            <span class="lesson-number"> AULA 04 </span>
+            <span class="lesson-number">AULA 04</span>
 
-            <h3>Login</h3>
+            <h3>IP Público Dinâmico</h3>
 
-            <p>A identificação usada para entrar na rede.</p>
+            <p>
+              O endereço público pode mudar com o tempo ou após uma nova
+              conexão.
+            </p>
 
             <button onclick="openLesson(4)">Aprender →</button>
           </article>
@@ -192,20 +204,35 @@
           <article class="lesson-card" data-lesson="5">
             <div class="lesson-icon cgnat">👨‍👩‍👧‍👦</div>
 
-            <span class="lesson-number"> AULA 05 </span>
+            <span class="lesson-number">AULA 05</span>
 
             <h3>CGNAT</h3>
 
-            <p>Vários clientes compartilhando um IP público.</p>
+            <p>
+              Vários clientes podem compartilhar o mesmo IP público na Internet.
+            </p>
 
             <button onclick="openLesson(5)">Aprender →</button>
+          </article>
+
+          <!-- LOGIN -->
+          <article class="lesson-card" data-lesson="6">
+            <div class="lesson-icon login">🔑</div>
+
+            <span class="lesson-number">AULA 06</span>
+
+            <h3>Login</h3>
+
+            <p>A identificação usada para autenticar a conexão do cliente.</p>
+
+            <button onclick="openLesson(6)">Aprender →</button>
           </article>
 
           <!-- QUIZ -->
           <article class="lesson-card quiz-card">
             <div class="lesson-icon quiz">🧠</div>
 
-            <span class="lesson-number"> DESAFIO </span>
+            <span class="lesson-number">DESAFIO</span>
 
             <h3>Teste seus conhecimentos</h3>
 
@@ -216,40 +243,75 @@
         </div>
       </section>
 
-      <!-- EXEMPLO -->
+      <!-- EXEMPLO AW FIBRA -->
       <section class="section example-section">
         <div class="example-box">
           <div class="example-character">🏢</div>
 
           <div>
-            <span class="badge"> 💡 EXEMPLO FÁCIL </span>
+            <span class="badge">💡 EXEMPLO AW FIBRA</span>
 
-            <h2>Imagine um prédio...</h2>
+            <h2>Imagine a AW Fibra...</h2>
 
             <p>
-              O prédio representa sua rede. Cada apartamento representa um
-              dispositivo. O endereço do prédio representa o IP público.
+              Pense na AW Fibra como uma empresa com vários departamentos. Cada
+              departamento representa uma rede, e cada pessoa ou equipamento
+              dentro dele possui uma identificação própria.
             </p>
 
             <div class="example-list">
               <div>
                 🏠
                 <strong>IP Privado</strong>
-                = apartamento
+                = identificação interna do equipamento
               </div>
 
               <div>
-                🌎
+                🎫
                 <strong>IP Público</strong>
-                = endereço do prédio
+                = ingresso/endereço usado para acessar a Internet
               </div>
 
               <div>
                 🔄
                 <strong>NAT</strong>
-                = porteiro
+                = responsável por organizar a saída da rede
+              </div>
+
+              <div>
+                🔁
+                <strong>IP Público Dinâmico</strong>
+                = o ingresso/endereço pode mudar
+              </div>
+
+              <div>
+                👨‍💼
+                <strong>CGNAT</strong>
+                = vários departamentos/clientes utilizando o mesmo ingresso
+                público
               </div>
             </div>
+
+            <div class="simple-example" style="margin-top: 20px">
+              <span>👨‍💼</span>
+
+              <div>
+                <strong>Gerente Gabriel</strong>
+
+                <p>
+                  Na nossa analogia, Gabriel representa o mecanismo de CGNAT do
+                  provedor: ele permite que vários clientes saiam para a
+                  Internet utilizando um mesmo IP público.
+                </p>
+              </div>
+            </div>
+
+            <p style="margin-top: 20px">
+              <strong>Importante:</strong> a comparação com pessoas e
+              departamentos serve apenas para facilitar o entendimento.
+              Tecnicamente, o IP identifica uma interface/equipamento na rede,
+              não uma pessoa.
+            </p>
           </div>
         </div>
       </section>
@@ -268,14 +330,14 @@
       </section>
     </main>
 
-    <!-- MODAL -->
+    <!-- MODAL DAS AULAS -->
     <div class="modal" id="lessonModal">
       <div class="modal-content">
         <button class="close" onclick="closeLesson()">×</button>
 
         <div id="modalIcon" class="modal-icon">🏠</div>
 
-        <span id="modalNumber" class="badge"> AULA </span>
+        <span id="modalNumber" class="badge">AULA</span>
 
         <h2 id="modalTitle">IP Privado</h2>
 
@@ -308,7 +370,7 @@
       <div class="modal-content quiz-modal">
         <button class="close" onclick="closeQuiz()">×</button>
 
-        <span class="badge"> 🧠 QUIZ </span>
+        <span class="badge">🧠 QUIZ</span>
 
         <h2 id="quizQuestion">Pergunta</h2>
 
@@ -318,13 +380,9 @@
       </div>
     </div>
 
-    <footer>
-      <p>🌐 Rede Fácil — Aprendendo redes de um jeito simples.</p>
-    </footer>
-
     <!-- ==========================================
-     NÍVEL AVANÇADO
-=========================================== -->
+         NÍVEL AVANÇADO
+    =========================================== -->
 
     <section class="section advanced-section" id="advanced">
       <div class="section-title">
@@ -362,17 +420,14 @@
         </button>
       </div>
 
-      <!-- ==========================================
-         ABA GERAL
-    =========================================== -->
-
+      <!-- ABA GERAL -->
       <div class="advanced-content active" id="tab-geral">
         <div class="advanced-grid">
           <!-- TROCA DE TITULARIDADE -->
           <article class="advanced-card">
             <div class="advanced-icon">🔄</div>
 
-            <span class="advanced-category"> CADASTRO </span>
+            <span class="advanced-category">CADASTRO</span>
 
             <h3>Troca de Titularidade</h3>
 
@@ -390,7 +445,7 @@
           <article class="advanced-card">
             <div class="advanced-icon">🔑</div>
 
-            <span class="advanced-category"> AUTENTICAÇÃO </span>
+            <span class="advanced-category">AUTENTICAÇÃO</span>
 
             <h3>PPPoE</h3>
 
@@ -406,7 +461,7 @@
           <article class="advanced-card">
             <div class="advanced-icon">📦</div>
 
-            <span class="advanced-category"> EQUIPAMENTOS </span>
+            <span class="advanced-category">EQUIPAMENTOS</span>
 
             <h3>ONU</h3>
 
@@ -422,7 +477,7 @@
           <article class="advanced-card">
             <div class="advanced-icon">📡</div>
 
-            <span class="advanced-category"> EQUIPAMENTOS </span>
+            <span class="advanced-category">EQUIPAMENTOS</span>
 
             <h3>ONT</h3>
 
@@ -438,7 +493,7 @@
           <article class="advanced-card">
             <div class="advanced-icon">📶</div>
 
-            <span class="advanced-category"> EQUIPAMENTOS </span>
+            <span class="advanced-category">EQUIPAMENTOS</span>
 
             <h3>Roteador</h3>
 
@@ -454,7 +509,7 @@
           <article class="advanced-card">
             <div class="advanced-icon">🔌</div>
 
-            <span class="advanced-category"> FIBRA </span>
+            <span class="advanced-category">FIBRA</span>
 
             <h3>PTO</h3>
 
@@ -470,7 +525,7 @@
           <article class="advanced-card">
             <div class="advanced-icon">💚</div>
 
-            <span class="advanced-category"> TECNOLOGIA </span>
+            <span class="advanced-category">TECNOLOGIA</span>
 
             <h3>GPON</h3>
 
@@ -486,7 +541,7 @@
           <article class="advanced-card">
             <div class="advanced-icon">🟠</div>
 
-            <span class="advanced-category"> TECNOLOGIA </span>
+            <span class="advanced-category">TECNOLOGIA</span>
 
             <h3>EPON</h3>
 
@@ -500,16 +555,13 @@
         </div>
       </div>
 
-      <!-- ==========================================
-         ABA TELEFONIA
-    =========================================== -->
-
+      <!-- ABA TELEFONIA -->
       <div class="advanced-content" id="tab-telefonia">
         <div class="advanced-intro">
           <div class="advanced-intro-icon">☎️</div>
 
           <div>
-            <span class="advanced-category"> TELEFONIA </span>
+            <span class="advanced-category">TELEFONIA</span>
 
             <h3>Como funciona uma ligação?</h3>
 
@@ -526,7 +578,7 @@
           <article class="advanced-card">
             <div class="advanced-icon">☎️</div>
 
-            <span class="advanced-category"> TELEFONIA </span>
+            <span class="advanced-category">TELEFONIA</span>
 
             <h3>O que é Ramal?</h3>
 
@@ -542,7 +594,7 @@
           <article class="advanced-card">
             <div class="advanced-icon">💻</div>
 
-            <span class="advanced-category"> TELEFONIA </span>
+            <span class="advanced-category">TELEFONIA</span>
 
             <h3>O que é MicroSIP?</h3>
 
@@ -554,11 +606,11 @@
             <button onclick="openAdvancedLesson('microsip')">Entender →</button>
           </article>
 
-          <!-- SIP -->
+          <!-- RAMAL + MICROSIP -->
           <article class="advanced-card">
             <div class="advanced-icon">🔗</div>
 
-            <span class="advanced-category"> TELEFONIA </span>
+            <span class="advanced-category">TELEFONIA</span>
 
             <h3>Ramal + MicroSIP</h3>
 
@@ -574,7 +626,6 @@
         </div>
 
         <!-- FLUXO TELEFONIA -->
-
         <div class="advanced-flow">
           <h3>☎️ Caminho simplificado de uma ligação</h3>
 
@@ -612,16 +663,13 @@
         </div>
       </div>
 
-      <!-- ==========================================
-         ABA REDE DAX
-    =========================================== -->
-
+      <!-- ABA REDE DAX -->
       <div class="advanced-content" id="tab-dax">
         <div class="dax-warning">
           <div class="dax-logo">🟠</div>
 
           <div>
-            <span class="advanced-category"> ATENÇÃO NO SUPORTE </span>
+            <span class="advanced-category">ATENÇÃO NO SUPORTE</span>
 
             <h3>Cliente da Rede Dax</h3>
 
@@ -636,7 +684,7 @@
         <div class="dax-comparison">
           <!-- REDE NORMAL -->
           <div class="network-comparison-card">
-            <span class="comparison-title"> 🟢 Rede GPON </span>
+            <span class="comparison-title">🟢 Rede GPON</span>
 
             <h3>Clientes da rede tradicional</h3>
 
@@ -653,7 +701,7 @@
 
           <!-- DAX -->
           <div class="network-comparison-card dax-card">
-            <span class="comparison-title"> 🟠 Rede Dax </span>
+            <span class="comparison-title">🟠 Rede Dax</span>
 
             <h3>Clientes integrados da Dax</h3>
 
@@ -670,9 +718,8 @@
         </div>
 
         <!-- PASSO A PASSO DAX -->
-
         <div class="dax-process">
-          <span class="advanced-category"> PASSO A PASSO </span>
+          <span class="advanced-category">PASSO A PASSO</span>
 
           <h3>Cliente Dax chegou no atendimento. E agora?</h3>
 
@@ -742,9 +789,8 @@
         </div>
 
         <!-- GPON VS EPON -->
-
         <div class="technology-comparison">
-          <span class="advanced-category"> COMPARAÇÃO </span>
+          <span class="advanced-category">COMPARAÇÃO</span>
 
           <h3>GPON x EPON</h3>
 
@@ -802,8 +848,8 @@
     </section>
 
     <!-- ==========================================
-     MODAL NÍVEL AVANÇADO
-=========================================== -->
+         MODAL NÍVEL AVANÇADO
+    =========================================== -->
 
     <div class="modal" id="advancedModal">
       <div class="modal-content advanced-modal">
@@ -811,24 +857,24 @@
 
         <div id="advancedModalIcon" class="modal-icon">🚀</div>
 
-        <span id="advancedModalCategory" class="badge"> AVANÇADO </span>
+        <span id="advancedModalCategory" class="badge">AVANÇADO</span>
 
         <h2 id="advancedModalTitle">Título</h2>
 
         <p id="advancedModalDescription">Descrição</p>
 
         <div class="simple-example">
-          <span> 💡 </span>
+          <span>💡</span>
 
           <div>
-            <strong> Imagine assim: </strong>
+            <strong>Imagine assim:</strong>
 
             <p id="advancedModalExample">Exemplo</p>
           </div>
         </div>
 
         <div class="technical-box">
-          <strong> 👨‍💻 No suporte: </strong>
+          <strong>👨‍💻 No suporte:</strong>
 
           <p id="advancedModalSupport">Informação</p>
         </div>
@@ -838,6 +884,11 @@
         </button>
       </div>
     </div>
+
+    <footer>
+      <p>🌐 Rede Fácil — Aprendendo redes de um jeito simples.</p>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

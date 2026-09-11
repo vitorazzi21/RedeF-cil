@@ -1,171 +1,148 @@
 // ==========================================
-// CONTEÚDO DAS AULAS
+// AULAS BÁSICAS
 // ==========================================
 
 const lessons = {
+  1: {
+    icon: "🏠",
+    number: "AULA 01",
+    title: "IP Privado",
+    description:
+      "O IP privado é a identificação usada pelos equipamentos dentro de uma rede interna.",
 
-    1: {
-        icon: "🏠",
-        number: "AULA 01",
-        title: "IP Privado",
+    example:
+      "Imagine que a AW Fibra possui vários departamentos. Cada departamento representa uma rede e cada pessoa ou equipamento dentro dele possui uma identificação própria. Essa identificação representa o IP privado.",
 
-        description:
-            "É o endereço que identifica um aparelho dentro da sua própria rede. Ele normalmente não é usado diretamente para identificar sua casa na Internet.",
+    technical:
+      "O IP privado é utilizado dentro da rede local. Exemplos comuns são 192.168.x.x, 10.x.x.x e 172.16.x.x até 172.31.x.x."
+  },
 
-        example:
-            "Imagine um prédio. Cada apartamento possui um número. O IP privado funciona de maneira parecida: ele identifica cada aparelho dentro da sua rede.",
+  2: {
+    icon: "🌎",
+    number: "AULA 02",
+    title: "IP Público",
+    description:
+      "O IP público é o endereço utilizado para representar uma conexão quando ela acessa a Internet.",
 
-        technical:
-            "Exemplos comuns são 192.168.1.10, 192.168.1.20 e 10.0.0.5."
-    },
+    example:
+      "Imagine que cada departamento precisa sair da empresa para acessar a Internet. O IP público funciona como o ingresso ou endereço utilizado nessa saída.",
 
-    2: {
-        icon: "🌎",
-        number: "AULA 02",
-        title: "IP Público",
+    technical:
+      "O IP público é utilizado para comunicação com a Internet. Em uma conexão residencial, o cliente pode receber um IP público diretamente ou compartilhar um IP por meio de CGNAT."
+  },
 
-        description:
-            "É o endereço usado para identificar sua conexão perante a Internet.",
+  3: {
+    icon: "🔄",
+    number: "AULA 03",
+    title: "NAT",
+    description:
+      "O NAT organiza a comunicação entre os equipamentos da rede interna e a Internet.",
 
-        example:
-            "Se o IP privado é o número do apartamento, o IP público é como o endereço do prédio inteiro.",
+    example:
+      "Imagine que várias pessoas de um departamento precisam sair pela mesma porta para acessar a Internet. O NAT organiza quem está saindo e para onde a resposta precisa voltar.",
 
-        technical:
-            "O IP público é fornecido ou associado pelo provedor e pode ser compartilhado quando a conexão está atrás de CGNAT."
-    },
+    technical:
+      "NAT significa Network Address Translation. Ele realiza a tradução entre endereços privados e públicos, permitindo que vários dispositivos utilizem uma mesma saída para a Internet."
+  },
 
-    3: {
-        icon: "🔄",
-        number: "AULA 03",
-        title: "NAT",
+  4: {
+    icon: "🎫",
+    number: "AULA 04",
+    title: "IP Público Dinâmico",
+    description:
+      "Um IP público dinâmico é um endereço que pode mudar ao longo do tempo.",
 
-        description:
-            "NAT é uma tecnologia que permite que vários aparelhos da sua rede utilizem uma conexão com a Internet através de um endereço público.",
+    example:
+      "Imagine que o ingresso utilizado pelo departamento para entrar na Internet não é permanente. Em determinado momento, ele pode receber outro ingresso. Isso representa um IP público dinâmico.",
 
-        example:
-            "Imagine um porteiro. Ele sabe qual pessoa mora em cada apartamento e consegue encaminhar as entregas para o lugar certo.",
+    technical:
+      "No modelo dinâmico, o endereço IP público é atribuído pelo provedor e pode ser alterado. Por isso, o cliente pode ter um IP público hoje e outro posteriormente."
+  },
 
-        technical:
-            "NAT significa Network Address Translation. Ele traduz informações entre endereços privados e públicos."
-    },
+  5: {
+    icon: "👨‍👩‍👧‍👦",
+    number: "AULA 05",
+    title: "CGNAT",
+    description:
+      "O CGNAT permite que vários clientes compartilhem um mesmo endereço IPv4 público.",
 
-    4: {
-        icon: "🔑",
-        number: "AULA 04",
-        title: "Login",
+    example:
+      "Imagine vários departamentos da AW Fibra querendo acessar a Internet, mas utilizando o mesmo ingresso público. Na nossa analogia, o Gerente Gabriel representa o mecanismo que organiza esse compartilhamento.",
 
-        description:
-            "O login é uma forma de identificar e autenticar o cliente na rede do provedor.",
+    technical:
+      "CGNAT significa Carrier-Grade NAT. Ele é utilizado pelo provedor para permitir que vários clientes compartilhem um mesmo IPv4 público, utilizando diferentes portas para identificar cada conexão."
+  },
 
-        example:
-            "Pense em uma catraca. Você apresenta sua identificação para provar que possui autorização para entrar.",
+  6: {
+    icon: "🔑",
+    number: "AULA 06",
+    title: "Login",
+    description:
+      "O login é utilizado para identificar e autenticar a conexão do cliente.",
 
-        technical:
-            "Em conexões PPPoE, por exemplo, o roteador pode utilizar usuário e senha para autenticar a conexão no servidor do provedor."
-    },
+    example:
+      "Imagine que cada departamento precisa apresentar uma identificação antes de poder utilizar a rede. O login funciona como essa identificação para permitir que a conexão seja autenticada.",
 
-    5: {
-        icon: "👨‍👩‍👧‍👦",
-        number: "AULA 05",
-        title: "CGNAT",
-
-        description:
-            "CGNAT permite que vários clientes compartilhem um mesmo endereço IPv4 público.",
-
-        example:
-            "Imagine vários prédios utilizando o mesmo endereço principal. Cada apartamento continua sendo diferente, mas o endereço externo é compartilhado.",
-
-        technical:
-            "CGNAT significa Carrier-Grade NAT. A faixa 100.64.0.0/10 é reservada para uso em redes desse tipo."
-    }
-
+    technical:
+      "Em conexões que utilizam PPPoE, o cliente utiliza credenciais de autenticação, normalmente usuário e senha, para estabelecer a sessão com o provedor."
+  }
 };
 
 
 // ==========================================
-// ELEMENTOS DAS AULAS
-// ==========================================
-
-const modal = document.getElementById("lessonModal");
-
-const modalIcon = document.getElementById("modalIcon");
-const modalNumber = document.getElementById("modalNumber");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalExample = document.getElementById("modalExample");
-const modalTechnical = document.getElementById("modalTechnical");
-
-
-// ==========================================
-// ABRIR AULA
+// CONTROLE DAS AULAS
 // ==========================================
 
 let currentLesson = null;
 
 function openLesson(id) {
+  const lesson = lessons[id];
 
-    const lesson = lessons[id];
+  if (!lesson) {
+    console.error("Aula não encontrada:", id);
+    return;
+  }
 
-    if (!lesson) return;
+  currentLesson = id;
 
-    currentLesson = id;
+  document.getElementById("modalIcon").textContent = lesson.icon;
+  document.getElementById("modalNumber").textContent = lesson.number;
+  document.getElementById("modalTitle").textContent = lesson.title;
+  document.getElementById("modalDescription").textContent =
+    lesson.description;
+  document.getElementById("modalExample").textContent = lesson.example;
+  document.getElementById("modalTechnical").textContent =
+    lesson.technical;
 
-    modalIcon.textContent = lesson.icon;
+  document.getElementById("lessonModal").classList.add("active");
 
-    modalNumber.textContent = lesson.number;
-
-    modalTitle.textContent = lesson.title;
-
-    modalDescription.textContent = lesson.description;
-
-    modalExample.textContent = lesson.example;
-
-    modalTechnical.textContent = lesson.technical;
-
-    modal.classList.add("active");
-
+  document.body.classList.add("modal-open");
 }
 
-
-// ==========================================
-// FECHAR AULA
-// ==========================================
 
 function closeLesson() {
+  document.getElementById("lessonModal").classList.remove("active");
 
-    modal.classList.remove("active");
+  document.body.classList.remove("modal-open");
 
+  currentLesson = null;
 }
 
 
-// ==========================================
-// FINALIZAR AULA
-// ==========================================
-
 function finishLesson() {
+  if (!currentLesson) return;
 
-    if (!currentLesson) return;
+  const card = document.querySelector(
+    `.lesson-card[data-lesson="${currentLesson}"]`
+  );
 
-    const card = document.querySelector(
-        `[data-lesson="${currentLesson}"]`
-    );
+  if (card) {
+    card.classList.add("completed");
+  }
 
-    if (card) {
+  updateProgress();
 
-        card.classList.add("completed");
-
-        const button = card.querySelector("button");
-
-        if (button) {
-            button.textContent = "✓ Aprendido";
-        }
-
-    }
-
-    updateProgress();
-
-    closeLesson();
-
+  closeLesson();
 }
 
 
@@ -174,51 +151,41 @@ function finishLesson() {
 // ==========================================
 
 function updateProgress() {
+  const totalLessons = Object.keys(lessons).length;
 
-    const completed =
-        document.querySelectorAll(".lesson-card.completed").length;
+  const completedLessons = document.querySelectorAll(
+    ".lesson-card.completed"
+  ).length;
 
-    const total = 5;
+  const percentage = Math.round(
+    (completedLessons / totalLessons) * 100
+  );
 
-    const percentage =
-        Math.round((completed / total) * 100);
+  const progressBar = document.getElementById("progressBar");
+  const progressText = document.getElementById("progressText");
 
-    const progressBar =
-        document.getElementById("progressBar");
+  if (progressBar) {
+    progressBar.style.width = `${percentage}%`;
+  }
 
-    const progressText =
-        document.getElementById("progressText");
-
-
-    if (progressBar) {
-        progressBar.style.width =
-            percentage + "%";
-    }
-
-
-    if (progressText) {
-        progressText.textContent =
-            percentage + "%";
-    }
-
+  if (progressText) {
+    progressText.textContent = `${percentage}%`;
+  }
 }
 
 
 // ==========================================
-// SCROLL
+// ROLAR ATÉ AS AULAS
 // ==========================================
 
 function scrollToLessons() {
+  const lessonsSection = document.getElementById("lessons");
 
-    const lessonsSection =
-        document.getElementById("lessons");
-
-    if (!lessonsSection) return;
-
+  if (lessonsSection) {
     lessonsSection.scrollIntoView({
-        behavior: "smooth"
+      behavior: "smooth"
     });
-
+  }
 }
 
 
@@ -227,94 +194,94 @@ function scrollToLessons() {
 // ==========================================
 
 const quiz = [
+  {
+    question:
+      "Dentro da nossa analogia da AW Fibra, o que representa o IP privado?",
 
-    {
-        question:
-            "Qual endereço identifica normalmente um aparelho dentro da sua rede?",
+    answers: [
+      "O ingresso para a Internet",
+      "A identificação interna do equipamento",
+      "O endereço do provedor",
+      "O servidor da Internet"
+    ],
 
-        answers: [
-            "IP Privado",
-            "IP Público",
-            "IP do YouTube",
-            "IP do servidor DNS"
-        ],
+    correct: 1
+  },
 
-        correct: 0
-    },
+  {
+    question:
+      "Na nossa analogia, o que representa o IP público?",
 
-    {
-        question:
-            "O que representa melhor o IP público?",
+    answers: [
+      "A identificação interna",
+      "O computador do cliente",
+      "O ingresso/endereço utilizado para acessar a Internet",
+      "O cabo de rede"
+    ],
 
-        answers: [
-            "O número do apartamento",
-            "O endereço do prédio",
-            "A senha do Wi-Fi",
-            "O nome do celular"
-        ],
+    correct: 2
+  },
 
-        correct: 1
-    },
+  {
+    question:
+      "Qual é a função do NAT?",
 
-    {
-        question:
-            "O que o NAT faz?",
+    answers: [
+      "Aumentar a velocidade da Internet",
+      "Organizar a comunicação entre a rede interna e a Internet",
+      "Criar uma rede Wi-Fi",
+      "Trocar a senha do roteador"
+    ],
 
-        answers: [
-            "Aumenta a velocidade da Internet",
-            "Troca a senha do Wi-Fi",
-            "Faz tradução entre endereços de rede",
-            "Instala fibra óptica"
-        ],
+    correct: 1
+  },
 
-        correct: 2
-    },
+  {
+    question:
+      "O que acontece com um IP público dinâmico?",
 
-    {
-        question:
-            "O que é CGNAT?",
+    answers: [
+      "Ele nunca muda",
+      "Ele só funciona dentro da residência",
+      "Ele pode mudar ao longo do tempo",
+      "Ele é sempre privado"
+    ],
 
-        answers: [
-            "Um tipo de cabo",
-            "Vários clientes compartilhando um IP público",
-            "Uma senha de Wi-Fi",
-            "Um servidor de jogos"
-        ],
+    correct: 2
+  },
 
-        correct: 1
-    },
+  {
+    question:
+      "Na analogia, quem representa o CGNAT?",
 
-    {
-        question:
-            "Para que serve o login em uma conexão PPPoE?",
+    answers: [
+      "O roteador",
+      "O servidor",
+      "O Gerente Gabriel",
+      "O computador"
+    ],
 
-        answers: [
-            "Identificar/autenticar o cliente",
-            "Aumentar o sinal Wi-Fi",
-            "Trocar o canal do roteador",
-            "Medir a velocidade"
-        ],
+    correct: 2
+  },
 
-        correct: 0
-    }
+  {
+    question:
+      "Qual é a função do login em uma conexão PPPoE?",
 
+    answers: [
+      "Identificar e autenticar a conexão",
+      "Aumentar o Wi-Fi",
+      "Criar um IP privado",
+      "Trocar automaticamente o roteador"
+    ],
+
+    correct: 0
+  }
 ];
 
 
 let currentQuestion = 0;
 let score = 0;
-
-const quizModal =
-    document.getElementById("quizModal");
-
-const quizQuestion =
-    document.getElementById("quizQuestion");
-
-const quizAnswers =
-    document.getElementById("quizAnswers");
-
-const quizResult =
-    document.getElementById("quizResult");
 
 
 // ==========================================
@@ -322,21 +289,14 @@ const quizResult =
 // ==========================================
 
 function startQuiz() {
+  currentQuestion = 0;
+  score = 0;
 
-    currentQuestion = 0;
+  document.getElementById("quizModal").classList.add("active");
 
-    score = 0;
+  document.body.classList.add("modal-open");
 
-    if (quizResult) {
-        quizResult.textContent = "";
-    }
-
-    if (quizModal) {
-        quizModal.classList.add("active");
-    }
-
-    showQuestion();
-
+  showQuestion();
 }
 
 
@@ -345,41 +305,33 @@ function startQuiz() {
 // ==========================================
 
 function showQuestion() {
+  const question = quiz[currentQuestion];
 
-    const question = quiz[currentQuestion];
+  if (!question) {
+    finishQuiz();
+    return;
+  }
 
-    if (!question) return;
+  document.getElementById("quizQuestion").textContent =
+    question.question;
 
+  const answersContainer =
+    document.getElementById("quizAnswers");
 
-    if (quizQuestion) {
+  answersContainer.innerHTML = "";
 
-        quizQuestion.textContent =
-            `${currentQuestion + 1}/${quiz.length} — ${question.question}`;
+  question.answers.forEach((answer, index) => {
+    const button = document.createElement("button");
 
-    }
+    button.textContent = answer;
 
+    button.onclick = () => answerQuestion(index);
 
-    if (!quizAnswers) return;
+    answersContainer.appendChild(button);
+  });
 
-    quizAnswers.innerHTML = "";
-
-
-    question.answers.forEach((answer, index) => {
-
-        const button =
-            document.createElement("button");
-
-        button.className = "answer";
-
-        button.textContent = answer;
-
-        button.onclick = () =>
-            answerQuestion(index);
-
-        quizAnswers.appendChild(button);
-
-    });
-
+  document.getElementById("quizResult").textContent =
+    `Pergunta ${currentQuestion + 1} de ${quiz.length}`;
 }
 
 
@@ -387,149 +339,47 @@ function showQuestion() {
 // RESPONDER QUIZ
 // ==========================================
 
-function answerQuestion(selected) {
+function answerQuestion(answerIndex) {
+  const question = quiz[currentQuestion];
 
-    const question = quiz[currentQuestion];
+  if (answerIndex === question.correct) {
+    score++;
+  }
 
-    if (!question) return;
+  currentQuestion++;
 
-
-    const buttons =
-        document.querySelectorAll(".answer");
-
-
-    buttons.forEach(button => {
-
-        button.disabled = true;
-
-    });
-
-
-    if (selected === question.correct) {
-
-        if (buttons[selected]) {
-            buttons[selected].classList.add("correct");
-        }
-
-        score++;
-
-        if (quizResult) {
-            quizResult.textContent =
-                "🎉 Muito bem! Você acertou.";
-        }
-
-    } else {
-
-        if (buttons[selected]) {
-            buttons[selected].classList.add("wrong");
-        }
-
-        if (buttons[question.correct]) {
-            buttons[question.correct]
-                .classList.add("correct");
-        }
-
-        if (quizResult) {
-            quizResult.textContent =
-                "🤔 Quase! A resposta correta está destacada.";
-        }
-
-    }
-
-
-    setTimeout(() => {
-
-        currentQuestion++;
-
-
-        if (currentQuestion < quiz.length) {
-
-            if (quizResult) {
-                quizResult.textContent = "";
-            }
-
-            showQuestion();
-
-        } else {
-
-            finishQuiz();
-
-        }
-
-    }, 1200);
-
+  showQuestion();
 }
 
 
 // ==========================================
-// FINAL DO QUIZ
+// FINALIZAR QUIZ
 // ==========================================
 
 function finishQuiz() {
+  const result = document.getElementById("quizResult");
 
-    if (quizQuestion) {
+  if (score === quiz.length) {
+    result.textContent =
+      `🎉 Parabéns! Você acertou ${score} de ${quiz.length}!`;
+  } else if (score >= 4) {
+    result.textContent =
+      `👏 Muito bem! Você acertou ${score} de ${quiz.length}.`;
+  } else if (score >= 2) {
+    result.textContent =
+      `👍 Está no caminho! Você acertou ${score} de ${quiz.length}.`;
+  } else {
+    result.textContent =
+      `📚 Vale revisar as aulas. Você acertou ${score} de ${quiz.length}.`;
+  }
 
-        quizQuestion.textContent =
-            "🎉 Quiz concluído!";
+  document.getElementById("quizQuestion").textContent =
+    "Quiz finalizado!";
 
-    }
-
-
-    if (quizAnswers) {
-
-        quizAnswers.innerHTML = "";
-
-    }
-
-
-    if (quizResult) {
-
-        quizResult.innerHTML = `
-            Você acertou <strong>${score}</strong>
-            de <strong>${quiz.length}</strong> perguntas.
-
-            <br><br>
-
-            ${getQuizMessage()}
-
-            <br><br>
-
-            <button
-                class="primary-button"
-                onclick="closeQuiz()">
-
-                Fechar
-
-            </button>
-        `;
-
-    }
-
-}
-
-
-// ==========================================
-// MENSAGEM FINAL DO QUIZ
-// ==========================================
-
-function getQuizMessage() {
-
-    if (score === 5) {
-
-        return "🏆 Excelente! Você já está dominando os conceitos básicos.";
-
-    }
-
-
-    if (score >= 3) {
-
-        return "👏 Muito bom! Você já entendeu bastante coisa.";
-
-    }
-
-
-    return "💪 Continue estudando. Redes ficam fáceis quando você entende os conceitos básicos.";
-
+  document.getElementById("quizAnswers").innerHTML = `
+    <button onclick="closeQuiz()">Fechar</button>
+    <button onclick="startQuiz()">Fazer novamente</button>
+  `;
 }
 
 
@@ -538,437 +388,297 @@ function getQuizMessage() {
 // ==========================================
 
 function closeQuiz() {
+  document.getElementById("quizModal").classList.remove("active");
 
-    if (quizModal) {
-
-        quizModal.classList.remove("active");
-
-    }
-
+  document.body.classList.remove("modal-open");
 }
 
 
 // ==========================================
-// FECHAR MODAL DAS AULAS
-// CLICANDO FORA
+// FECHAR MODAIS CLICANDO FORA
 // ==========================================
 
-window.addEventListener("click", (event) => {
+window.addEventListener("click", function (event) {
+  const lessonModal = document.getElementById("lessonModal");
+  const quizModal = document.getElementById("quizModal");
+  const advancedModal = document.getElementById("advancedModal");
 
-    if (event.target === modal) {
+  if (event.target === lessonModal) {
+    closeLesson();
+  }
 
-        closeLesson();
+  if (event.target === quizModal) {
+    closeQuiz();
+  }
 
-    }
-
-
-    if (event.target === quizModal) {
-
-        closeQuiz();
-
-    }
-
+  if (event.target === advancedModal) {
+    closeAdvancedLesson();
+  }
 });
 
 
 // ==========================================
-// CONTEÚDOS AVANÇADOS
+// TECLA ESC
+// ==========================================
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeLesson();
+    closeQuiz();
+    closeAdvancedLesson();
+  }
+});
+
+
+// ==========================================
+// NÍVEL AVANÇADO
 // ==========================================
 
 const advancedLessons = {
 
-    titularidade: {
+  titularidade: {
+    icon: "🔄",
+    category: "CADASTRO",
+    title: "Troca de Titularidade",
 
-        icon: "🔄",
+    description:
+      "A troca de titularidade acontece quando a responsabilidade pela conexão passa de um cliente para outro.",
 
-        category: "CADASTRO",
+    example:
+      "Imagine que uma conexão está cadastrada para uma pessoa, mas outra pessoa passa a ser responsável pelo endereço. É como trocar o nome responsável pelo departamento.",
 
-        title: "Troca de Titularidade",
+    support:
+      "No suporte, é importante verificar os dados do novo titular e realizar o procedimento correto para que a conexão continue funcionando."
+  },
 
-        description:
-            "A troca de titularidade acontece quando a conexão deixa de ficar no nome de uma pessoa e passa para outra.",
+  pppoe: {
+    icon: "🔑",
+    category: "AUTENTICAÇÃO",
+    title: "PPPoE",
 
-        example:
-            "Imagine uma casa alugada. João era o responsável pela Internet, mas se mudou. Maria passa a morar na casa e agora será a nova responsável pelo contrato.",
+    description:
+      "PPPoE é um protocolo utilizado para estabelecer uma sessão de conexão através de autenticação.",
 
-        support:
-            "No processo utilizado pela operação, o cadastro do cliente muda e o PPPoE antigo pode ser substituído pelo PPPoE relacionado ao novo titular. Assim, a autenticação da conexão fica vinculada corretamente ao novo cliente."
+    example:
+      "Imagine que o cliente precisa apresentar um usuário e uma senha antes de receber autorização para utilizar a conexão.",
 
-    },
+    support:
+      "No suporte, o login PPPoE é importante para autenticar a conexão do cliente e pode estar relacionado ao cadastro e à titularidade."
+  },
 
+  onu: {
+    icon: "📦",
+    category: "EQUIPAMENTOS",
+    title: "ONU",
 
-    pppoe: {
+    description:
+      "A ONU recebe o sinal óptico da rede de fibra e disponibiliza a conexão para os equipamentos do cliente.",
 
-        icon: "🔑",
+    example:
+      "Imagine a ONU como o equipamento que recebe a informação que chega pela fibra e prepara essa conexão para ser utilizada pelo cliente.",
 
-        category: "AUTENTICAÇÃO",
+    support:
+      "No suporte, é importante observar o estado do equipamento e os indicadores ópticos para identificar possíveis problemas."
+  },
 
-        title: "PPPoE",
+  ont: {
+    icon: "📡",
+    category: "EQUIPAMENTOS",
+    title: "ONT",
 
-        description:
-            "O PPPoE é uma forma utilizada por provedores para autenticar a conexão do cliente utilizando usuário e senha.",
+    description:
+      "A ONT é um equipamento óptico instalado no lado do cliente e pode integrar funções de rede.",
 
-        example:
-            "Pense no PPPoE como um crachá. O roteador apresenta esse crachá ao provedor para provar qual cliente está tentando acessar a rede.",
+    example:
+      "Imagine uma ONT como um equipamento que recebe a fibra e, dependendo do modelo, já possui funções que normalmente seriam realizadas por outros equipamentos.",
 
-        support:
-            "Quando ocorre uma troca de titularidade, o login PPPoE pode mudar porque a autenticação precisa ficar associada ao novo cadastro. O processo exato depende das regras e sistemas utilizados pelo provedor."
+    support:
+      "No suporte, é importante identificar qual equipamento está instalado e quais funções ele possui."
+  },
 
-    },
+  roteador: {
+    icon: "📶",
+    category: "EQUIPAMENTOS",
+    title: "Roteador",
 
+    description:
+      "O roteador organiza a rede local e distribui a conexão para os dispositivos do cliente.",
 
-    onu: {
+    example:
+      "Imagine o roteador como o responsável por organizar quem dentro da casa ou empresa vai utilizar a conexão.",
 
-        icon: "📦",
+    support:
+      "No suporte, podemos verificar Wi-Fi, dispositivos conectados, configurações, sinais e comunicação com outros equipamentos."
+  },
 
-        category: "EQUIPAMENTOS",
+  pto: {
+    icon: "🔌",
+    category: "FIBRA",
+    title: "PTO",
 
-        title: "ONU",
+    description:
+      "A PTO é o ponto onde a fibra óptica termina dentro da instalação do cliente.",
 
-        description:
-            "ONU significa Optical Network Unit. É um equipamento que participa da comunicação entre a rede óptica do provedor e a rede do cliente.",
+    example:
+      "Imagine a PTO como o ponto de chegada da fibra dentro do imóvel, onde a conexão óptica é entregue para o equipamento.",
 
-        example:
-            "A fibra chega trazendo informação através de luz. A ONU ajuda a transformar essa comunicação óptica em algo que os equipamentos da rede conseguem utilizar.",
+    support:
+      "No suporte, a PTO faz parte da análise da instalação física da fibra e pode ser importante em casos de problemas ópticos."
+  },
 
-        support:
-            "Ao atender um cliente, é importante verificar se a ONU está registrada, se possui sinal óptico adequado e se apresenta alarmes como LOS."
+  gpon: {
+    icon: "💚",
+    category: "TECNOLOGIA",
+    title: "GPON",
 
-    },
+    description:
+      "GPON é uma tecnologia de rede óptica passiva utilizada para entregar conexão através de fibra óptica.",
 
+    example:
+      "Imagine uma estrutura onde uma única rede óptica é distribuída para vários clientes através de equipamentos e divisões da rede.",
 
-    ont: {
+    support:
+      "No suporte, é importante identificar a tecnologia utilizada pelo cliente para evitar procedimentos incompatíveis."
+  },
 
-        icon: "📡",
+  epon: {
+    icon: "🟠",
+    category: "TECNOLOGIA",
+    title: "EPON",
 
-        category: "EQUIPAMENTOS",
+    description:
+      "EPON é outra tecnologia de rede óptica passiva utilizada para conectar clientes através de fibra.",
 
-        title: "ONT",
+    example:
+      "Imagine uma estrada de fibra com uma tecnologia diferente da utilizada em uma rede GPON. Os equipamentos precisam ser compatíveis com essa tecnologia.",
 
-        description:
-            "ONT significa Optical Network Terminal. É o terminal óptico instalado no lado do assinante.",
+    support:
+      "No suporte, clientes da Rede Dax podem utilizar equipamentos EPON e possuem um processo específico de liberação."
+  },
 
-        example:
-            "Pense na ONT como o equipamento que recebe a fibra dentro da casa e entrega a conexão para a rede do cliente.",
+  ramal: {
+    icon: "☎️",
+    category: "TELEFONIA",
+    title: "O que é Ramal?",
 
-        support:
-            "ONT é, tecnicamente, um tipo de ONU usado como terminal no cliente. Alguns modelos possuem apenas portas de rede, enquanto outros também possuem Wi-Fi, telefonia e funções de roteador."
+    description:
+      "O ramal funciona como uma identificação interna utilizada pelo sistema de telefonia.",
 
-    },
+    example:
+      "Imagine que cada pessoa dentro de uma empresa possui um número interno para receber e realizar ligações.",
 
+    support:
+      "No suporte, o ramal é utilizado para identificar a extensão de telefonia do cliente."
+  },
 
-    roteador: {
+  microsip: {
+    icon: "💻",
+    category: "TELEFONIA",
+    title: "O que é MicroSIP?",
 
-        icon: "📶",
+    description:
+      "MicroSIP é um aplicativo que permite utilizar o computador para realizar e receber chamadas VoIP.",
 
-        category: "EQUIPAMENTOS",
+    example:
+      "Imagine transformar o computador em um telefone utilizando um programa e uma conexão de rede.",
 
-        title: "Roteador",
+    support:
+      "No suporte, o MicroSIP pode ser configurado utilizando os dados do ramal para registrar a telefonia."
+  },
 
-        description:
-            "O roteador cria e organiza a rede local do cliente e encaminha o tráfego entre essa rede e outras redes.",
+  ramalMicrosip: {
+    icon: "🔗",
+    category: "TELEFONIA",
+    title: "Ramal + MicroSIP",
 
-        example:
-            "Imagine um guarda de trânsito. Ele observa para onde cada informação precisa ir e manda cada uma para o caminho correto.",
+    description:
+      "O MicroSIP utiliza as informações do ramal para realizar o registro da telefonia.",
 
-        support:
-            "No atendimento podemos verificar autenticação, endereço WAN, DHCP, Wi-Fi, dispositivos conectados, portas LAN e outras configurações."
+    example:
+      "O ramal funciona como a identificação e o MicroSIP funciona como o telefone utilizado pelo computador.",
 
-    },
-
-
-    pto: {
-
-        icon: "🔌",
-
-        category: "FIBRA",
-
-        title: "PTO",
-
-        description:
-            "PTO significa Ponto de Terminação Óptica. É o ponto onde a fibra da instalação termina dentro do local do cliente.",
-
-        example:
-            "É parecido com uma tomada. A fibra chega até aquele ponto e, a partir dali, um cordão óptico conecta a PTO ao equipamento do cliente.",
-
-        support:
-            "Problemas físicos na PTO, no conector ou no cordão óptico podem afetar o nível de sinal e causar instabilidade ou perda de conexão."
-
-    },
-
-
-    gpon: {
-
-        icon: "💚",
-
-        category: "TECNOLOGIA",
-
-        title: "GPON",
-
-        description:
-            "GPON é uma tecnologia de rede óptica passiva muito utilizada por provedores para fornecer Internet através de fibra.",
-
-        example:
-            "Imagine uma estrada principal de fibra sendo dividida para atender várias casas.",
-
-        support:
-            "Os equipamentos utilizados precisam ser compatíveis com a tecnologia GPON e autorizados na rede correspondente."
-
-    },
-
-
-    epon: {
-
-        icon: "🟠",
-
-        category: "TECNOLOGIA",
-
-        title: "EPON",
-
-        description:
-            "EPON também é uma tecnologia de rede óptica passiva, mas utiliza uma arquitetura e padrões diferentes do GPON.",
-
-        example:
-            "GPON e EPON são como dois sistemas de transporte diferentes. Os dois levam o usuário ao destino, mas utilizam regras e equipamentos compatíveis com cada sistema.",
-
-        support:
-            "Um equipamento EPON não deve ser tratado automaticamente como se fosse GPON. É necessário utilizar o processo e o sistema compatíveis com aquela rede."
-
-    },
-
-
-    ramal: {
-
-        icon: "☎️",
-
-        category: "TELEFONIA",
-
-        title: "O que é um Ramal?",
-
-        description:
-            "O ramal é uma identificação utilizada dentro de um sistema de telefonia.",
-
-        example:
-            "Imagine uma empresa com um número principal. Cada funcionário possui um número interno, como 101, 102 ou 103. Esses números são ramais.",
-
-        support:
-            "Em telefonia IP, o ramal pode possuir usuário, senha e servidor SIP. Essas informações permitem que um telefone ou aplicativo seja registrado no sistema."
-
-    },
-
-
-    microsip: {
-
-        icon: "💻",
-
-        category: "TELEFONIA",
-
-        title: "O que é MicroSIP?",
-
-        description:
-            "MicroSIP é um softphone, ou seja, um programa que permite utilizar o computador como telefone através de tecnologia SIP.",
-
-        example:
-            "É como transformar o computador em um telefone. Você digita um número no programa e consegue realizar uma chamada utilizando a rede.",
-
-        support:
-            "Para funcionar, normalmente o MicroSIP precisa receber as informações da conta SIP, como usuário ou ramal, senha e servidor."
-
-    },
-
-
-    ramalMicrosip: {
-
-        icon: "🔗",
-
-        category: "TELEFONIA",
-
-        title: "Ramal + MicroSIP",
-
-        description:
-            "O MicroSIP precisa registrar uma conta de telefonia para conseguir realizar e receber chamadas.",
-
-        example:
-            "O MicroSIP é o telefone. O ramal é a identidade daquele telefone dentro do sistema.",
-
-        support:
-            "Quando os dados são configurados corretamente, o MicroSIP tenta registrar o ramal no servidor SIP. Depois do registro, o usuário pode realizar e receber chamadas conforme as permissões da conta."
-
-    }
-
+    support:
+      "No suporte, é necessário conferir os dados do ramal e verificar se o MicroSIP está corretamente registrado."
+  }
 };
 
 
 // ==========================================
-// TROCAR ABAS AVANÇADAS
+// ABAS DO NÍVEL AVANÇADO
 // ==========================================
 
-function changeAdvancedTab(tabName, button) {
+function changeAdvancedTab(tab, button) {
+  document
+    .querySelectorAll(".advanced-tab")
+    .forEach((btn) => btn.classList.remove("active"));
 
-    const contents =
-        document.querySelectorAll(".advanced-content");
+  document
+    .querySelectorAll(".advanced-content")
+    .forEach((content) => content.classList.remove("active"));
 
-    const tabs =
-        document.querySelectorAll(".advanced-tab");
+  button.classList.add("active");
 
+  const selectedTab = document.getElementById(`tab-${tab}`);
 
-    contents.forEach(content => {
-
-        content.classList.remove("active");
-
-    });
-
-
-    tabs.forEach(tab => {
-
-        tab.classList.remove("active");
-
-    });
-
-
-    const selectedContent =
-        document.getElementById(`tab-${tabName}`);
-
-
-    if (selectedContent) {
-
-        selectedContent.classList.add("active");
-
-    }
-
-
-    if (button) {
-
-        button.classList.add("active");
-
-    }
-
+  if (selectedTab) {
+    selectedTab.classList.add("active");
+  }
 }
 
 
 // ==========================================
-// MODAL AVANÇADO
+// ABRIR AULA AVANÇADA
 // ==========================================
-
-const advancedModal =
-    document.getElementById("advancedModal");
-
 
 function openAdvancedLesson(id) {
+  const lesson = advancedLessons[id];
 
-    const lesson =
-        advancedLessons[id];
+  if (!lesson) {
+    console.error("Aula avançada não encontrada:", id);
+    return;
+  }
 
+  document.getElementById("advancedModalIcon").textContent =
+    lesson.icon;
 
-    if (!lesson) {
+  document.getElementById("advancedModalCategory").textContent =
+    lesson.category;
 
-        return;
+  document.getElementById("advancedModalTitle").textContent =
+    lesson.title;
 
-    }
+  document.getElementById("advancedModalDescription").textContent =
+    lesson.description;
 
+  document.getElementById("advancedModalExample").textContent =
+    lesson.example;
 
-    const icon =
-        document.getElementById("advancedModalIcon");
+  document.getElementById("advancedModalSupport").textContent =
+    lesson.support;
 
-    const category =
-        document.getElementById("advancedModalCategory");
+  document.getElementById("advancedModal").classList.add("active");
 
-    const title =
-        document.getElementById("advancedModalTitle");
-
-    const description =
-        document.getElementById("advancedModalDescription");
-
-    const example =
-        document.getElementById("advancedModalExample");
-
-    const support =
-        document.getElementById("advancedModalSupport");
-
-
-    if (icon) {
-
-        icon.textContent =
-            lesson.icon;
-
-    }
-
-
-    if (category) {
-
-        category.textContent =
-            lesson.category;
-
-    }
-
-
-    if (title) {
-
-        title.textContent =
-            lesson.title;
-
-    }
-
-
-    if (description) {
-
-        description.textContent =
-            lesson.description;
-
-    }
-
-
-    if (example) {
-
-        example.textContent =
-            lesson.example;
-
-    }
-
-
-    if (support) {
-
-        support.textContent =
-            lesson.support;
-
-    }
-
-
-    if (advancedModal) {
-
-        advancedModal.classList.add("active");
-
-    }
-
+  document.body.classList.add("modal-open");
 }
 
 
 // ==========================================
-// FECHAR MODAL AVANÇADO
+// FECHAR AULA AVANÇADA
 // ==========================================
 
 function closeAdvancedLesson() {
+  document
+    .getElementById("advancedModal")
+    .classList.remove("active");
 
-    if (advancedModal) {
-
-        advancedModal.classList.remove("active");
-
-    }
-
+  document.body.classList.remove("modal-open");
 }
 
 
 // ==========================================
-// FECHAR MODAL AVANÇADO - COMERCIAL
-// CLICANDO FORA
+// INICIALIZAÇÃO
 // ==========================================
 
-window.addEventListener("click", (event) => {
-
-    if (event.target === advancedModal) {
-
-        closeAdvancedLesson();
-
-    }
-
+document.addEventListener("DOMContentLoaded", function () {
+  updateProgress();
 });
